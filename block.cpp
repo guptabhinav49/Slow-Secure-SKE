@@ -1,43 +1,8 @@
-#include <bits/stdc++.h>>
+#include <bits/stdc++.h>
 
 #include "ske-lib.h"
 
 using namespace std;
-
-void BLOCK::increment(vb &r)
-{
-    int first = 0;
-    int k = r.size();
-    for (int i = 0; i < k; i++)
-    {
-        if (!r[k - i - 1])
-        {
-            r[k - i - 1] = 1;
-            break;
-        }
-        else
-        {
-            r[k - i - 1] = 0;
-        }
-    }
-}
-
-void BLOCK::xor_vec(vb &message, vb &key, vb &enc, int start, int end)
-{
-    for (int i = start; i < end; i++)
-    {
-        enc[i] = message[i] ^ key[i % (end - start)];
-    }
-}
-
-void BLOCK::randomr(vb &r)
-{
-    srand(time(NULL));
-    for (int i = 0; i < r.size(); i++)
-    {
-        r[i] = rand() % 2;
-    }
-}
 
 BLOCK::BLOCK(vb key, int mode, string name)
 {
@@ -55,21 +20,22 @@ vb BLOCK::encrypt(vb message)
         int num_blocks = len / k;       //number of blocks.
 
         vb r(k);
-        this->randomr(r);
+        randomr(r);
 
         vb enc(len + k);
         vb zero(len + k, 0);
-        this->xor_vec(zero, r, enc, len, len + k);
+        xor_vec(zero, r, enc, len, len + k);
 
         for (int i = 0; i < num_blocks; i++)
         {
-            this->increment(r);
+            increment(r);
             vb enc_key = this->prf_instance->eval(r);
-            this->xor_vec(message, enc_key, enc, i * k, (i + 1) * k);
+            xor_vec(message, enc_key, enc, i * k, (i + 1) * k);
         }
-        this->increment(r);
+        increment(r);
         vb enc_key = this->prf_instance->eval(r);
-        this->xor_vec(message, enc_key, enc, k * num_blocks, len);
+        xor_vec(message, enc_key, enc, k * num_blocks, len);
+        return enc;
     }
 }
 
@@ -90,13 +56,14 @@ vb BLOCK::decrypt(vb enc)
 
         for (int i = 0; i < num_blocks; i++)
         {
-            this->increment(r);
+            increment(r);
             vb dec_key = this->prf_instance->eval(r);
-            this->xor_vec(enc, dec_key, message, i * k, (i + 1) * k);
+            xor_vec(enc, dec_key, message, i * k, (i + 1) * k);
         }
-        this->increment(r);
+        increment(r);
         vb dec_key = this->prf_instance->eval(r);
-        this->xor_vec(message, dec_key, enc, k * num_blocks, len - k);
+        xor_vec(message, dec_key, enc, k * num_blocks, len - k);
+        return message;
     }
 }
 

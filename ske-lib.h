@@ -47,9 +47,6 @@ class BLOCK
     vb key_block;
     int mode;
     PRF *prf_instance;
-    void xor_vec(vb &message, vb &key, vb &enc, int start, int end);
-    void increment(vb &r);
-    void randomr(vb &r);
 
 public:
     BLOCK(vb key, int mode, string name);
@@ -81,6 +78,12 @@ class KEYGEN
 public:
     KEYGEN(int secpar);
     vb keygen(string name);
-    void sample_prime(vb &p);
-    bool primality();
-}
+};
+
+//FUNCTIONS
+
+void sample_prime(vb &p);
+bool primality(vb p);
+void xor_vec(vb &message, vb &key, vb &enc, int start, int end);
+void increment(vb &r);
+void randomr(vb &r);
