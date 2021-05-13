@@ -6,7 +6,7 @@ using namespace std;
 SKE::SKE(string name, int secpar, int mode)
 {
     vb key;
-    this->keygen_instance = new KEYGEN(secpar);
+    KEYGEN *keygen_instance = new KEYGEN(secpar);
     //key = Keygen(secpar)
     this->block_instance = new BLOCK(key, mode, name);
     this->key = key;
