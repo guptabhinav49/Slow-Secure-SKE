@@ -5,7 +5,19 @@
 #endif
 
 PRG::PRG(string name, vb key){
-    owp_instance = new OWP(name, key, key);   //to be changed, just dummy info
+    int shift = key.size()/48;
+    
+    vb vb1, vb2, vb3;
+    vb1 = vb(key.begin(), key.begin() + key.size()/3 + shift);
+    vb2 = vb(key.begin() + key.size()/3 + shift, key.begin() + 2*key.size()/3);
+    vb3 = vb(key.begin() + 2*key.size()/3, key.end());
+
+    bigint a, b;
+    a = vb1;
+    b = vb2;
+    a *= b;
+
+    owp_instance = new OWP(name, a.to_bitstring(), vb3);   //to be changed, just dummy info
     index_owp = key;
 }
 

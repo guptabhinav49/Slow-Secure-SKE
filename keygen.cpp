@@ -8,8 +8,9 @@ KEYGEN::KEYGEN(int secpar)
 }
 
 vb KEYGEN::keygen(string name)
-{
-    if (name == "rsa")
+{   
+    vb key;
+    if (name == "RSA")
     {
         int shift = secpar / 16;
         vb p(secpar + shift, 0), q(secpar - shift, 0), e(secpar, 0);
@@ -17,7 +18,7 @@ vb KEYGEN::keygen(string name)
         sample_prime(q);
         sample_prime(e);
 
-        vb key(3 * secpar);
+        key = vb(3 * secpar);
         for (int i = 0; i < 3 * secpar; i++)
         {
             if (i < secpar - shift)
@@ -28,4 +29,5 @@ vb KEYGEN::keygen(string name)
                 key[i] = e[i];
         }
     }
+    return key;
 }

@@ -1,9 +1,9 @@
 // #include<bits/stdc++.h>
 // #include "BigInt.cpp"
+#ifndef SKE_H
+#define SKE_H
 #include "ske-lib.h"
-// #ifndef SKE_H
-// #define SKE_H
-// #endif
+#endif
 
 void print_vb(vb a)
 {
@@ -18,12 +18,13 @@ int main()
     OWP *a = new OWP("ads", v1, v2);
     PRG *b = new PRG("asd", v1);
     PRF *c = new PRF("asda", v2);
+    SKE *s = new SKE(2);
 
     vb v3 = {1, 0, 0, 1, 1};
     print_vb(c->eval(v3));
 
     // ios::sync_with_stdio(0), cin.tie(0);
-    string str = "99999999999999999999999999999999";
+    string str = "0909";
     bigint BIG = str;
     BIG *= 1000200000003000LL;
 

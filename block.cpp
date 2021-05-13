@@ -1,8 +1,11 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
 
+#ifndef SKE_H
+#define SKE_H
 #include "ske-lib.h"
+#endif
 
-using namespace std;
+// using namespace std;
 
 BLOCK::BLOCK(vb key, int mode, string name)
 {
@@ -12,7 +15,8 @@ BLOCK::BLOCK(vb key, int mode, string name)
 }
 
 vb BLOCK::encrypt(vb message)
-{
+{   
+    vb enc;
     if (mode == 0)
     {
         int k = this->key_block.size(); //k = 3*(security parameter)
@@ -22,7 +26,7 @@ vb BLOCK::encrypt(vb message)
         vb r(k);
         randomr(r);
 
-        vb enc(len + k);
+        enc = vb(len + k);
         vb zero(len + k, 0);
         xor_vec(zero, r, enc, len, len + k);
 
@@ -35,12 +39,13 @@ vb BLOCK::encrypt(vb message)
         increment(r);
         vb enc_key = this->prf_instance->eval(r);
         xor_vec(message, enc_key, enc, k * num_blocks, len);
-        return enc;
     }
+    return enc;
 }
 
 vb BLOCK::decrypt(vb enc)
-{
+{   
+    vb message;
     if (mode == 0)
     {
         int k = this->key_block.size(); //k = 3*(security parameter)
@@ -52,7 +57,7 @@ vb BLOCK::decrypt(vb enc)
         for (int i = 0; i < k; i++)
             r[i] = enc[len - k + i];
 
-        vb message(len - k);
+        message = vb(len - k);
 
         for (int i = 0; i < num_blocks; i++)
         {
@@ -63,14 +68,16 @@ vb BLOCK::decrypt(vb enc)
         increment(r);
         vb dec_key = this->prf_instance->eval(r);
         xor_vec(message, dec_key, enc, k * num_blocks, len - k);
-        return message;
     }
+    return message;
 }
 
 string BLOCK::get_mode()
 {
     if (this->mode == 0)
         return "CTR";
+
+    return NULL;
 }
 
 string BLOCK::get_name()

@@ -1,10 +1,17 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+#ifndef SKE_H
+#define SKE_H
 #include "ske-lib.h"
+#endif
 
 using namespace std;
 
-SKE::SKE(string name, int secpar, int mode)
+SKE::SKE(int secpar, string name = "RSA", int mode = 0)
 {
+    if(secpar < 16){
+        throw std::runtime_error("Error: secpar not long enough");
+    }
+
     vb key;
     KEYGEN *keygen_instance = new KEYGEN(secpar);
     //key = Keygen(secpar)

@@ -1,6 +1,10 @@
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
+
+#ifndef BIG_INT
+#define BIG_INT
 #include "BigInt.cpp"
+#endif
+
 #define vb vector<bool>
 using namespace std;
 
@@ -10,11 +14,11 @@ class OWP
 {
 private:
     string name;
-    vb index1;
-    vb index2;
+    bigint index1;
+    bigint index2;
 
 public:
-    OWP(string, vb i1, vb i2);
+    OWP(string, vb i1, vb i2={0});
     vb eval(vb const &x) const;
     bool hardcore(vb const &x) const;
     string get_name();
@@ -63,7 +67,7 @@ class SKE
     BLOCK *block_instance;
 
 public:
-    SKE(string name, int secpar, int mode);
+    SKE(int secpar, string name = "RSA", int mode = 0);
     vb decrypt(vb enc);
     vb encrypt(vb message);
     string get_name();
