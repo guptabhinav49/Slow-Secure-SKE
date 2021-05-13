@@ -1,5 +1,6 @@
 #include <vector>
 #include <string>
+#include "BigInt.cpp"
 #define vb vector<bool>
 using namespace std;
 
