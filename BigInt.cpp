@@ -39,6 +39,7 @@ struct bigint {
 		while(cp>0){
 			if(cp%2) out.push_back(1);
 			else out.push_back(0);
+			cp/=2;
 		}
 		reverse(out.begin(), out.end());
 

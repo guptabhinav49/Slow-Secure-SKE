@@ -12,7 +12,7 @@ PRG::PRG(string name, vb key){
 vb PRG::eval(vb input){
     vb intermediate = input;
     vb out;
-    for(ll i=0; i<input.size(); i++){
+    for(int i=0; i<input.size(); i++){
         out.push_back(owp_instance->hardcore(intermediate));
         intermediate = owp_instance->eval(intermediate);
     }
