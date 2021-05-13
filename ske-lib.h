@@ -6,28 +6,28 @@ using namespace std;
 class OWP{
 private:
     string name;
-    int index1;
-    int index2;
+    vb index1;
+    vb index2;
 public:
-    OWP(string, int i1, int i2);
+    OWP(string, vb i1, vb i2);
     vb eval(vb const &x) const;
     bool hardcore(vb const &x) const;
     string get_name();
 };
 
 class PRG{
-    OWP owp_instance;
-    vb key_owp;
+    OWP* owp_instance;
+    vb index_owp;
 
 public:
-    PRG(string name, int key);
+    PRG(string name, vb key);
     vb eval(vb input);
     string get_name();
 }; 
 
 class PRF{
     vb key_prg;
-    PRG prg_instance;
+    PRG* prg_instance;
 
 public:
     PRF(string name, vb key);
