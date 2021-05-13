@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #include "ske-lib.h"
-
+#include "BigInt.cpp"
 // #ifndef SKE_H
 // #define SKE_H
 // #endif
@@ -17,5 +17,13 @@ int main(){
 
     vb v3 = {1,0,0,1,1};
     print_vb(c->eval(v3));
+
+    ios::sync_with_stdio(0), cin.tie(0);
+	string str = "99999999999999999999999999999999";
+	bigint BIG=str;
+	BIG*=1000200000003000LL;
+    
+	print_vb(BIG.to_bitstring());
+
     return 0;
 }
