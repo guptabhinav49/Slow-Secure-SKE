@@ -1,7 +1,7 @@
 //This has been taken from https://gist.github.com/ar-pa/957297fb3f88996ead11
 
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
 typedef long long ll;
 const int maxn = 1e2 + 14, lg = 15;

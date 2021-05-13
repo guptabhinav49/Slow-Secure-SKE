@@ -1,6 +1,6 @@
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
 #include "ske-lib.h"
-using namespace std;
+// using namespace std;
 
 KEYGEN::KEYGEN(int secpar)
 {

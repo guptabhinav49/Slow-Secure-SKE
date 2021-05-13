@@ -1,5 +1,4 @@
 // #include<bits/stdc++.h>
-#include "BigInt.cpp"
 #include "ske-lib.h"
 // #ifndef SKE_H
 // #define SKE_H
