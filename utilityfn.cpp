@@ -1,9 +1,16 @@
 #include "ske-lib.h"
 // #include "BigInt.cpp"
 
+void print_vb(vb &a)
+{
+    for (int i = 0; i < a.size(); i++)
+        cout << a[i];
+    cout << endl;
+}
+
 void randomr(vb &r)
 {
-    srand(time(NULL));
+    // srand(time(NULL));
     for (int i = 0; i < r.size(); i++)
     {
         r[i] = rand() % 2;
@@ -16,20 +23,28 @@ bool primality(vb p)
     b = p;
     if (b == 0 || b == 1)
         return false;
+    if(b==2)
+        return true;
+
     for (bigint i = 3; i * i < b; i += 1)
     {
-        if (primality(i.to_bitstring()) && b % i == 0)
+        if (b % i == 0)
             return false;
     }
-    return false;
+    return true;
 }
 
 void sample_prime(vb &p)
 {
-    srand(time(NULL));
+    // srand(time(NULL));
 
+    int i = 0;
     while (!primality(p))
-    {
+    {   
+        bigint b;
+        b = p;
+        // cout << i++  << " " << b << endl;
+        // print_vb(p);
         randomr(p);
         p[0] = 1;
         p[p.size() - 1] = 1;

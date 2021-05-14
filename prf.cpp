@@ -6,7 +6,7 @@
 PRF::PRF(int secpar, string name){
     this->secpar = secpar;
     prg_instance = new PRG(secpar, name);
-    key_prg = PRG->get_key();
+    key_prg = prg_instance->get_key();
 }
 
 vb PRF::eval(vb index){
@@ -20,8 +20,9 @@ vb PRF::eval(vb index){
             out = vb(out.begin() + out.size()/2, out.begin()+out.size());
         }
     }
+    cout << "PRF calc done" << endl;
     return out;
 }
 
 string PRF::get_name(){return prg_instance->get_name();}
-vb PRF::get_key_size(){return prg_instance->get_key().size();}
+int PRF::get_key_size(){return key_prg.size();}

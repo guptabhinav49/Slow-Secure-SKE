@@ -49,13 +49,13 @@ public:
     PRF(int secpar, string name);
     vb eval(vb index);
     string get_name();
-    vb get_key();
+    int get_key_size();
 };
 
 class BLOCK
 {   
     int secpar;
-    vb key_size;
+    int key_size;
     int mode;
     PRF *prf_instance;
 
@@ -65,17 +65,17 @@ public:
     vb decrypt(vb enc);
     string get_name();
     string get_mode();
-    vb get_key();
+    // vb get_key();
 };
 
 class SKE
 {
-    vb key;
+    // vb key;
     int secpar;
     BLOCK *block_instance;
 
 public:
-    SKE(int secpar, string name = "RSA", int mode = 0);
+    SKE(int secpar, string name, int mode);
     vb decrypt(vb enc);
     vb encrypt(vb message);
     string get_name();
@@ -99,3 +99,4 @@ bool primality(vb p);
 void xor_vec(vb &message, vb &key, vb &enc, int start, int end);
 void increment(vb &r);
 void randomr(vb &r);
+void print_vb(vb &a);

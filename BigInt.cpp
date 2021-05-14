@@ -42,6 +42,19 @@ struct bigint
 		}
 		return ans;
 	}
+	bigint modexp(bigint N, bigint e){
+		bigint ans = 1, a = *this, b = e;
+		while (!b.isZero())
+		{
+			if (b % 2)
+				ans *= a;
+			ans = ans % N;
+			a *= a, b /= 2;
+			a = a % N;
+		}
+		return ans;
+	}
+
 	vector<bool> to_bitstring()
 	{
 		bigint cp = *this;

@@ -6,14 +6,14 @@
 
 using namespace std;
 
-SKE::SKE(int secpar, string name = "RSA", int mode = 0)
+SKE::SKE(int secpar, string name, int mode)
 {
     if(secpar < 16){
         throw std::runtime_error("Error: secpar not long enough");
     }
 
     this->block_instance = new BLOCK(secpar, name, mode);
-    this->key = block_instance->get_key();
+    // this->key = block_instance->get_key();
     this->secpar = secpar;
 }
 

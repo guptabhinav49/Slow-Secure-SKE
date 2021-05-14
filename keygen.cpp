@@ -2,12 +2,12 @@
 #include "ske-lib.h"
 // using namespace std;
 
-KEYGEN::KEYGEN(int secpar)
+KeyGen_RSA::KeyGen_RSA(int secpar)
 {
     this->secpar = secpar;
 }
 
-vb KEYGEN::keygen(string name, bigint &N, bigint &e)
+vb KeyGen_RSA::keygen(string name, bigint &N, bigint &e)
 {   
     vb key;
     if (name == "RSA")
@@ -15,10 +15,17 @@ vb KEYGEN::keygen(string name, bigint &N, bigint &e)
         int shift = secpar / 16;
         vb p(secpar + shift, 0), q(secpar - shift, 0), et(secpar, 0);
         sample_prime(p);
+        cout << "p done!" << endl;
+        print_vb(p);
         sample_prime(q);
+        cout << "q done!" << endl;
+        print_vb(q);
         sample_prime(et);
+        cout << "et done!" << endl;
+        print_vb(et);
 
-        bigint P, Q, E;
+
+        bigint P, Q;
         P = p, Q = q;
         N = P*Q;
         e = et;
@@ -31,7 +38,7 @@ vb KEYGEN::keygen(string name, bigint &N, bigint &e)
             else if (i < 2 * secpar)
                 key[i] = q[i];
             else
-                key[i] = e[i];
+                key[i] = et[i];
         }
     }
     return key;
