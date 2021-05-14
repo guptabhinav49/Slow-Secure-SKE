@@ -1,7 +1,3 @@
 190050003*
 *.exe
 *.o
-html/
-latex/
-.vscode/
-a.out
