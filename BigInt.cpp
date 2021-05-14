@@ -38,7 +38,8 @@ struct bigint
 		}
 		return ans;
 	}
-	bigint modexp(bigint N, bigint e){
+	bigint modexp(bigint N, bigint e)
+	{
 		bigint ans = 1, a = *this, b = e;
 		while (!b.isZero())
 		{
@@ -107,7 +108,7 @@ struct bigint
 
 		for (int i = inp.size() - 1; i >= 0; i--)
 		{
-			if (inp[i])
+			if (inp[i] == 1)
 				*this += exp;
 			exp *= 2;
 		}

@@ -29,7 +29,7 @@ public:
     vb get_key() const;
 };
 
-// PRG class: Object that takes _secpar_ as input. 
+// PRG class: Object that takes _secpar_ as input.
 // We get a PRG on instanstiation, with key length O(secpar)
 class PRG
 {
@@ -45,9 +45,9 @@ public:
 
 // Returns a PRF. Initialisation with secpar.
 // Functions:
-//     eval- outputs PRFs output on input index 
+//     eval- outputs PRFs output on input index
 class PRF
-{   
+{
     int secpar;
     vb key_prg;
     PRG *prg_instance;
@@ -56,13 +56,13 @@ public:
     PRF(int secpar, string name);
     vb eval(vb index) const;
     string get_name() const;
-    int get_key_size() const; 
+    int get_key_size() const;
 };
 
 // Utility class to encrypt the messages with multiple blocks
 // Instantiated by class SKE
 class BLOCK
-{   
+{
     int secpar;
     int key_size;
     int mode;
@@ -79,7 +79,7 @@ public:
 
 // CPA-secure SKE scheme
 // Instantiated with _secpar_
-// Functions: 
+// Functions:
 //      encrypt: encrypts the message
 //      decrypt: decrypts
 
@@ -97,7 +97,6 @@ public:
     string get_mode() const;
     // vb serialize();
 };
-
 
 // Class to generate keys for RSA OWP
 // called internally by OWP class on initialisation with secpar

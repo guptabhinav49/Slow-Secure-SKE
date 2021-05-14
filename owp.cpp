@@ -10,13 +10,15 @@
         secpar: security parameter
         t: name of the OWP used (currently only 1 available)
 */
-OWP::OWP(int secpar, string t){
+OWP::OWP(int secpar, string t)
+{
     this->secpar = secpar;
     name = t;
     KeyGen_RSA *keygen_instance = new KeyGen_RSA(secpar);
     key = keygen_instance->keygen(t, N, e);
+    e = 3;
     nbits = (N.to_bitstring()).size();
-    cout << N <<  " " << e << endl;
+    cout << N << " " << e << endl;
 }
 
 /*
@@ -25,22 +27,25 @@ OWP::OWP(int secpar, string t){
     params:
         x: input vector<bool>
 */
-vector<bool> OWP::eval(vector<bool> const &x) const{
+vb OWP::eval(vb const &x) const
+{
     vb out;
 
-    if(name == "RSA"){
+    if (name == "RSA")
+    {
         bigint x_dash;
         x_dash = x;
-        x_dash = x_dash%N;
+        x_dash = x_dash % N;
         x_dash = x_dash.modexp(N, e);
         out = x_dash.to_bitstring();
     }
     // cout << out.size()  << " " << nbits << endl;
-    if(out.size() != nbits){
+    if (out.size() != nbits)
+    {
         reverse(out.begin(), out.end());
-        while(out.size() != nbits)
+        while (out.size() != nbits)
             out.push_back(0);
-        
+
         reverse(out.begin(), out.end());
     }
 
@@ -50,12 +55,13 @@ vector<bool> OWP::eval(vector<bool> const &x) const{
 /*
     returns the hardcore predicate (in case of RSA simply any bit of the input)
 */
-bool OWP::hardcore(vector<bool> const &x) const{
-    return x[x.size()-1]; 
+bool OWP::hardcore(vb const &x) const
+{
+    return x[x.size() - 1];
 }
 
 /*
     simple getter functions
 */
-string OWP::get_name() const { return name;}
-vb OWP::get_key() const {return key;}
+string OWP::get_name() const { return name; }
+vb OWP::get_key() const { return key; }

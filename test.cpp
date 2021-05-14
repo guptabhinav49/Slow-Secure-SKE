@@ -21,7 +21,7 @@ int main()
     {
         message[i] = rand() % 2;
     }
-    print_vb(message);
+    // print_vb(message);
 
     // vb enc = s->encrypt(message);
     // print_vb(enc);
@@ -29,14 +29,16 @@ int main()
     // vb dec = s->decrypt(enc);
     // print_vb(dec);
 
-    // for(int i=0; i<message_size; i++){
-    //     if(dec[i] != message[i]){
+    // for (int i = 0; i < message_size; i++)
+    // {
+    //     if (dec[i] != message[i])
+    //     {
     //         cout << "wrong" << endl;
     //         break;
     //     }
     // }
 
-    PRG *p = new PRG(32, "RSA");
+    PRF *p = new PRF(32, "RSA");
     vb enc = p->eval(message);
 
     print_vb(enc);

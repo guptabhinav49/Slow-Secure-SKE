@@ -3,12 +3,11 @@
 #include "ske-lib.h"
 #endif
 
-
 /*
     INIT BLOCK
 */
 BLOCK::BLOCK(int secpar, string name, int mode)
-{   
+{
     this->secpar = secpar;
     this->prf_instance = new PRF(secpar, name);
     this->mode = mode;
@@ -19,13 +18,13 @@ BLOCK::BLOCK(int secpar, string name, int mode)
     Encrypt message block-wise
 */
 vb BLOCK::encrypt(vb message) const
-{   
+{
     vb enc;
     if (mode == 0)
     {
         // int key_size = this->key_block.size(); //k = 3*(security parameter)
-        int len = message.size();       //length of message
-        int num_blocks = len / key_size;       //number of blocks.
+        int len = message.size();        //length of message
+        int num_blocks = len / key_size; //number of blocks.
 
         // cout << "numbocks: " << num_blocks << endl;
         vb r(key_size);
@@ -33,14 +32,13 @@ vb BLOCK::encrypt(vb message) const
         // cout << "r: ";
         // print_vb(r);
 
-
         enc = vb(len);
         vb zero(len + key_size, 0);
         // cout << "before xor:\t"; print_vb(enc);
         enc.insert(enc.end(), r.begin(), r.end());
 
         // xor_vec(zero, r, enc, len, len + key_size);
-        
+
         // cout << "after:\t"; print_vb(enc);
         for (int i = 0; i < num_blocks; i++)
         {
@@ -65,13 +63,13 @@ vb BLOCK::encrypt(vb message) const
     Decrypt message blockwise
 */
 vb BLOCK::decrypt(vb enc) const
-{   
+{
     vb message;
     if (mode == 0)
     {
         // int k = this->key_block.size(); //k = 3*(security parameter)
-        int len = enc.size();           //length of encryption
-        int num_blocks = len / key_size - 1;   //number of message blocks.
+        int len = enc.size();                //length of encryption
+        int num_blocks = len / key_size - 1; //number of message blocks.
 
         cout << "num_blocks: " << num_blocks << endl;
 
