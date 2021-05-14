@@ -3,3 +3,5 @@
 *.o
 html/
 latex/
+.vscode/
+a.out
