@@ -36,25 +36,30 @@ void randomr(vb &r)
     \return whether miller-test outputs True or False
 */
 
-bool millerTest(bigint b, bigint b1){
+bool millerTest(bigint b, bigint b1)
+{
     const int MAX_LEN = 200;
     vb r(MAX_LEN);
 
     randomr(r);
     bigint a;
     a = r;
-    a = bigint(2) + a%(b-3);
+    a = bigint(2) + a % (b - 3);
 
     bigint x = a.modexp(b, b1);
-    if(x==1 || x==b-1) return true;
+    if (x == 1 || x == b - 1)
+        return true;
 
     //runs 'r-1' times
 
     // b1*=2;
-    while(b1 != b-1){
+    while (b1 != b - 1)
+    {
         x = x.modexp(b, 2);
-        if(x==1) return false;
-        if(x==b-1) return true;
+        if (x == 1)
+            return false;
+        if (x == b - 1)
+            return true;
 
         b1 *= 2;
     }
@@ -70,24 +75,29 @@ bool millerTest(bigint b, bigint b1){
 */
 
 bool primality(bigint b)
-{   
-    if(b==0 || b==1){
+{
+    if (b == 0 || b == 1)
+    {
         return false;
     }
-    if (b==2) return true;
-    if(b%2==0) return false;
+    if (b == 2)
+        return true;
+    if (b % 2 == 0)
+        return false;
 
-    bigint b1 = b-1;
+    bigint b1 = b - 1;
 
     int PROB_K = 1;
-    while(b1 != 0 && b1 % 2 == 0){
-        b1/=2;
+    while (b1 != 0 && b1 % 2 == 0)
+    {
+        b1 /= 2;
         PROB_K++;
     }
 
     PROB_K *= 2;
-    for(int i=0; i<PROB_K; i++){
-        if(!millerTest(b, b1))
+    for (int i = 0; i < PROB_K; i++)
+    {
+        if (!millerTest(b, b1))
             return false;
     }
     return true;
@@ -106,7 +116,7 @@ void sample_prime(vb &p)
     int i = 0;
     bigint b;
     while (!primality(b))
-    {   
+    {
         // b = p;
         // cout << i++  << " " << b << endl;
         // print_vb(p);
@@ -141,7 +151,7 @@ void increment(vb &r)
 
 /*!
     \fn xor_vec(vb &message, vb &key, vb &enc, int start, int end)
-    XORs \param message with the \param key and stores in the \param enc. XOR is done from index \param start to index \param end (inclusive).
+    XORs message with the key and stores in the enc. XOR is done from index start to index end (inclusive).
 
     \param message Input message to be XORed.
     \param key Bit-vector to be XORed with.

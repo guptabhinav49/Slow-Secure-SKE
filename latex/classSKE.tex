@@ -26,6 +26,9 @@ int \mbox{\hyperlink{classSKE_a89a18aa5856826e250d44757f9700e56}{secpar}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Topmost class that the user will use to perform the symmteric key encryption. Object will be initialised with a security parameter, name of the \mbox{\hyperlink{classOWP}{OWP}} primitive and mode of encryption. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classSKE_a59e169b4c0baa7ca611f6cfbd28d0291}\label{classSKE_a59e169b4c0baa7ca611f6cfbd28d0291}} 
 \index{SKE@{SKE}!SKE@{SKE}}
@@ -33,6 +36,15 @@ int \mbox{\hyperlink{classSKE_a89a18aa5856826e250d44757f9700e56}{secpar}}
 \doxysubsubsection{\texorpdfstring{SKE()}{SKE()}}
 {\footnotesize\ttfamily SKE\+::\+SKE (\begin{DoxyParamCaption}\item[{int}]{secpar,  }\item[{string}]{name,  }\item[{int}]{mode }\end{DoxyParamCaption})}
 
+Constructor for the class. 
+\begin{DoxyParams}{Parameters}
+{\em secpar} & Security parameter. \\
+\hline
+{\em name} & Name of the \mbox{\hyperlink{classOWP}{OWP}} primitive. \\
+\hline
+{\em mode} & Mode of encryption \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -48,18 +60,32 @@ int \mbox{\hyperlink{classSKE_a89a18aa5856826e250d44757f9700e56}{secpar}}
 \doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} SKE\+::encrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}}}]{message }\end{DoxyParamCaption}) const}
 
+Encrypts the input message. 
+\begin{DoxyParams}{Parameters}
+{\em message} & Bool-\/vector to be encrypted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+CPA-\/\+SKE secure encryption 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classSKE_a957210da11adfd8ec7bfa3ce7b816240}\label{classSKE_a957210da11adfd8ec7bfa3ce7b816240}} 
 \index{SKE@{SKE}!get\_mode@{get\_mode}}
 \index{get\_mode@{get\_mode}!SKE@{SKE}}
 \doxysubsubsection{\texorpdfstring{get\_mode()}{get\_mode()}}
 {\footnotesize\ttfamily string SKE\+::get\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+Getter to get the current mode of encryption. \begin{DoxyReturn}{Returns}
+returns the mode 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classSKE_a7e739babbfcfd7ba209a012b820c0a7a}\label{classSKE_a7e739babbfcfd7ba209a012b820c0a7a}} 
 \index{SKE@{SKE}!get\_name@{get\_name}}
 \index{get\_name@{get\_name}!SKE@{SKE}}
 \doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
 {\footnotesize\ttfamily string SKE\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+Getter to get the primitive in use. \begin{DoxyReturn}{Returns}
+returns the primitive name as a string. 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}

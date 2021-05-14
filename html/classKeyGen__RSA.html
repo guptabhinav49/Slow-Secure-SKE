@@ -76,8 +76,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a70f06a2dfa7d5fce38fa30f7084dedc1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyGen__RSA.html#a70f06a2dfa7d5fce38fa30f7084dedc1">KeyGen_RSA</a> (int <a class="el" href="classKeyGen__RSA.html#a8a370d404558229626e0a625a7f2b53b">secpar</a>)</td></tr>
+<tr class="memdesc:a70f06a2dfa7d5fce38fa30f7084dedc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classKeyGen__RSA.html#a70f06a2dfa7d5fce38fa30f7084dedc1">More...</a><br /></td></tr>
 <tr class="separator:a70f06a2dfa7d5fce38fa30f7084dedc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65522878d3618cd9d48317de69d88876"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ske-lib_8h.html#a0bb5eea20d345a77027f911883acc087">vb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyGen__RSA.html#a65522878d3618cd9d48317de69d88876">keygen</a> (string name, <a class="el" href="structbigint.html">bigint</a> &amp;N, <a class="el" href="structbigint.html">bigint</a> &amp;e) const</td></tr>
+<tr class="memdesc:a65522878d3618cd9d48317de69d88876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates key and stores N,e in the given bigint references. We use the Miller-Rabin primality test.  <a href="classKeyGen__RSA.html#a65522878d3618cd9d48317de69d88876">More...</a><br /></td></tr>
 <tr class="separator:a65522878d3618cd9d48317de69d88876"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -85,7 +87,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a8a370d404558229626e0a625a7f2b53b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyGen__RSA.html#a8a370d404558229626e0a625a7f2b53b">secpar</a></td></tr>
 <tr class="separator:a8a370d404558229626e0a625a7f2b53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Generates p,q,e for RSA. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a70f06a2dfa7d5fce38fa30f7084dedc1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70f06a2dfa7d5fce38fa30f7084dedc1">&#9670;&nbsp;</a></span>KeyGen_RSA()</h2>
 
@@ -101,6 +105,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">secpar</td><td>security parameter </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -136,6 +148,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generates key and stores N,e in the given bigint references. We use the Miller-Rabin primality test. </p>
 
 </div>
 </div>

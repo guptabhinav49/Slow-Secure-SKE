@@ -93,7 +93,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a8d281f81eaea29582aa679a1addb6525"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBLOCK.html">BLOCK</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSKE.html#a8d281f81eaea29582aa679a1addb6525">block_instance</a></td></tr>
 <tr class="separator:a8d281f81eaea29582aa679a1addb6525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Topmost class that the user will use to perform the symmteric key encryption. Object will be initialised with a security parameter, name of the <a class="el" href="classOWP.html">OWP</a> primitive and mode of encryption. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a59e169b4c0baa7ca611f6cfbd28d0291"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a59e169b4c0baa7ca611f6cfbd28d0291">&#9670;&nbsp;</a></span>SKE()</h2>
 
@@ -125,6 +127,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constructor for the class. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">secpar</td><td>Security parameter. </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the <a class="el" href="classOWP.html">OWP</a> primitive. </td></tr>
+    <tr><td class="paramname">mode</td><td>Mode of encryption </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -162,6 +172,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Encrypts the input message. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Bool-vector to be encrypted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>CPA-SKE secure encryption </dd></dl>
 
 </div>
 </div>
@@ -179,6 +196,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Getter to get the current mode of encryption. </p><dl class="section return"><dt>Returns</dt><dd>returns the mode </dd></dl>
 
 </div>
 </div>
@@ -196,6 +214,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Getter to get the primitive in use. </p><dl class="section return"><dt>Returns</dt><dd>returns the primitive name as a string. </dd></dl>
 
 </div>
 </div>

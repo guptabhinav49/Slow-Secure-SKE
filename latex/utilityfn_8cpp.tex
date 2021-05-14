@@ -13,9 +13,9 @@ void \mbox{\hyperlink{utilityfn_8cpp_a5dccb5b3a6d49532c306e2b08019b3a8}{print\+\
 \item 
 void \mbox{\hyperlink{utilityfn_8cpp_ad9f2f24143e712b5bec0c5ba6c1afb91}{randomr}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&r)
 \item 
-bool \mbox{\hyperlink{utilityfn_8cpp_a99f323e47596dcefc4db34d5509c6c37}{miller\+Test}} (\mbox{\hyperlink{structbigint}{bigint}} b, \mbox{\hyperlink{structbigint}{bigint}} b1)
+bool \mbox{\hyperlink{utilityfn_8cpp_a8dee1067d0b47e71c84b5ec126aedc2c}{miller\+Test}} (\mbox{\hyperlink{structbigint}{bigint}} b, \mbox{\hyperlink{structbigint}{bigint}} b1)
 \item 
-bool \mbox{\hyperlink{utilityfn_8cpp_a7e8938a37766b9f7e2c372b3103f2f8a}{primality}} (\mbox{\hyperlink{structbigint}{bigint}} b)
+bool \mbox{\hyperlink{utilityfn_8cpp_abe08de7b1a9aa7f512a4608629a06ba4}{primality}} (\mbox{\hyperlink{structbigint}{bigint}} b)
 \item 
 void \mbox{\hyperlink{utilityfn_8cpp_aa7b4d284a94726b4fe1b219c984f1ae9}{sample\+\_\+prime}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&p)
 \item 
@@ -41,18 +41,43 @@ void \mbox{\hyperlink{utilityfn_8cpp_ac57510ba9035a1aca2731813335f1594}{xor\+\_\
 \doxysubsubsection{\texorpdfstring{increment()}{increment()}}
 {\footnotesize\ttfamily void increment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{r }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{utilityfn_8cpp_a99f323e47596dcefc4db34d5509c6c37}\label{utilityfn_8cpp_a99f323e47596dcefc4db34d5509c6c37}} 
+Increments input bool/bit-\/vector by 1. 
+\begin{DoxyParams}{Parameters}
+{\em r} & Input to increment. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utilityfn_8cpp_a8dee1067d0b47e71c84b5ec126aedc2c}\label{utilityfn_8cpp_a8dee1067d0b47e71c84b5ec126aedc2c}} 
 \index{utilityfn.cpp@{utilityfn.cpp}!millerTest@{millerTest}}
 \index{millerTest@{millerTest}!utilityfn.cpp@{utilityfn.cpp}}
 \doxysubsubsection{\texorpdfstring{millerTest()}{millerTest()}}
-{\footnotesize\ttfamily bool miller\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbigint}{bigint}}}]{b,  }\item[{\mbox{\hyperlink{structbigint}{bigint}}}]{b1 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily miller\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbigint}{bigint}}}]{b,  }\item[{\mbox{\hyperlink{structbigint}{bigint}}}]{b1 }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{utilityfn_8cpp_a7e8938a37766b9f7e2c372b3103f2f8a}\label{utilityfn_8cpp_a7e8938a37766b9f7e2c372b3103f2f8a}} 
+This is second part of the miller-\/rabin primality check. 
+\begin{DoxyParams}{Parameters}
+{\em b} & integer to be checked for being prime \\
+\hline
+{\em b1} & Odd number such that b = b1$\ast$2$^\wedge$r \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether miller-\/test outputs True or False 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utilityfn_8cpp_abe08de7b1a9aa7f512a4608629a06ba4}\label{utilityfn_8cpp_abe08de7b1a9aa7f512a4608629a06ba4}} 
 \index{utilityfn.cpp@{utilityfn.cpp}!primality@{primality}}
 \index{primality@{primality}!utilityfn.cpp@{utilityfn.cpp}}
 \doxysubsubsection{\texorpdfstring{primality()}{primality()}}
-{\footnotesize\ttfamily bool primality (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbigint}{bigint}}}]{b }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily primality (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbigint}{bigint}}}]{b }\end{DoxyParamCaption})}
 
+Checks whether b is prime or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Integer that is being tested for prime. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether b is prime or not. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{utilityfn_8cpp_a5dccb5b3a6d49532c306e2b08019b3a8}\label{utilityfn_8cpp_a5dccb5b3a6d49532c306e2b08019b3a8}} 
 \index{utilityfn.cpp@{utilityfn.cpp}!print\_vb@{print\_vb}}
 \index{print\_vb@{print\_vb}!utilityfn.cpp@{utilityfn.cpp}}
@@ -65,15 +90,40 @@ void \mbox{\hyperlink{utilityfn_8cpp_ac57510ba9035a1aca2731813335f1594}{xor\+\_\
 \doxysubsubsection{\texorpdfstring{randomr()}{randomr()}}
 {\footnotesize\ttfamily void randomr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{r }\end{DoxyParamCaption})}
 
+Stores a random bit string in the input 
+\begin{DoxyParams}{Parameters}
+{\em r} & reference to a bit string \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{utilityfn_8cpp_aa7b4d284a94726b4fe1b219c984f1ae9}\label{utilityfn_8cpp_aa7b4d284a94726b4fe1b219c984f1ae9}} 
 \index{utilityfn.cpp@{utilityfn.cpp}!sample\_prime@{sample\_prime}}
 \index{sample\_prime@{sample\_prime}!utilityfn.cpp@{utilityfn.cpp}}
 \doxysubsubsection{\texorpdfstring{sample\_prime()}{sample\_prime()}}
 {\footnotesize\ttfamily void sample\+\_\+prime (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{p }\end{DoxyParamCaption})}
 
+Randomly samples prime of size p.\+size() 
+\begin{DoxyParams}{Parameters}
+{\em p} & Bit-\/vector in which the binary form the prime will be stored. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{utilityfn_8cpp_ac57510ba9035a1aca2731813335f1594}\label{utilityfn_8cpp_ac57510ba9035a1aca2731813335f1594}} 
 \index{utilityfn.cpp@{utilityfn.cpp}!xor\_vec@{xor\_vec}}
 \index{xor\_vec@{xor\_vec}!utilityfn.cpp@{utilityfn.cpp}}
 \doxysubsubsection{\texorpdfstring{xor\_vec()}{xor\_vec()}}
 {\footnotesize\ttfamily void xor\+\_\+vec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{message,  }\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{key,  }\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{enc,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
 
+XORs message with the key and stores in the enc. XOR is done from index start to index end (inclusive).
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Input message to be XORed. \\
+\hline
+{\em key} & Bit-\/vector to be XORed with. \\
+\hline
+{\em enc} & Variable to store the result. \\
+\hline
+{\em start} & Initial index \\
+\hline
+{\em end} & Last index \\
+\hline
+\end{DoxyParams}

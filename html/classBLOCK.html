@@ -97,7 +97,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a99ba7dea0a720a64ff913e781e2d7ad7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPRF.html">PRF</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBLOCK.html#a99ba7dea0a720a64ff913e781e2d7ad7">prf_instance</a></td></tr>
 <tr class="separator:a99ba7dea0a720a64ff913e781e2d7ad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class blockwise encrpyts the input message, after calling the class <a class="el" href="classPRF.html">PRF</a> multiple times (i.e. for each block of message). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2c6cff4cedf1198f0fd98313eb141397"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c6cff4cedf1198f0fd98313eb141397">&#9670;&nbsp;</a></span>BLOCK()</h2>
 
@@ -129,6 +131,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This is the constructor for this class. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">secpar</td><td>Security parameter </td></tr>
+    <tr><td class="paramname">name</td><td>Name of the <a class="el" href="classOWP.html">OWP</a> primitive to be used for the defining the <a class="el" href="classPRF.html">PRF</a> used (only one option as of now) </td></tr>
+    <tr><td class="paramname">mode</td><td>Mode (CBC only as of now) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -148,6 +158,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Decrypts the ciphertext blockwise </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enc</td><td>Ciphertext to be decrypted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Decrypted bool vector from the input ciphertext </dd></dl>
 
 </div>
 </div>
@@ -166,6 +183,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Encrypt message block-wise </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message to be encrypted by this object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The encrypted bool-vector </dd></dl>
 
 </div>
 </div>
@@ -183,6 +207,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Getter to get the current mode of encryption. </p><dl class="section return"><dt>Returns</dt><dd>returns the mode </dd></dl>
 
 </div>
 </div>
@@ -200,6 +225,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Getter to get the primitive in use. </p><dl class="section return"><dt>Returns</dt><dd>returns the primitive name as a string. </dd></dl>
 
 </div>
 </div>

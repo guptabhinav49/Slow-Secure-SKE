@@ -82,10 +82,10 @@ Functions</h2></td></tr>
 <tr class="separator:a5dccb5b3a6d49532c306e2b08019b3a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9f2f24143e712b5bec0c5ba6c1afb91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilityfn_8cpp.html#ad9f2f24143e712b5bec0c5ba6c1afb91">randomr</a> (<a class="el" href="ske-lib_8h.html#a0bb5eea20d345a77027f911883acc087">vb</a> &amp;r)</td></tr>
 <tr class="separator:ad9f2f24143e712b5bec0c5ba6c1afb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99f323e47596dcefc4db34d5509c6c37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilityfn_8cpp.html#a99f323e47596dcefc4db34d5509c6c37">millerTest</a> (<a class="el" href="structbigint.html">bigint</a> b, <a class="el" href="structbigint.html">bigint</a> b1)</td></tr>
-<tr class="separator:a99f323e47596dcefc4db34d5509c6c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e8938a37766b9f7e2c372b3103f2f8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilityfn_8cpp.html#a7e8938a37766b9f7e2c372b3103f2f8a">primality</a> (<a class="el" href="structbigint.html">bigint</a> b)</td></tr>
-<tr class="separator:a7e8938a37766b9f7e2c372b3103f2f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dee1067d0b47e71c84b5ec126aedc2c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilityfn_8cpp.html#a8dee1067d0b47e71c84b5ec126aedc2c">millerTest</a> (<a class="el" href="structbigint.html">bigint</a> b, <a class="el" href="structbigint.html">bigint</a> b1)</td></tr>
+<tr class="separator:a8dee1067d0b47e71c84b5ec126aedc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe08de7b1a9aa7f512a4608629a06ba4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilityfn_8cpp.html#abe08de7b1a9aa7f512a4608629a06ba4">primality</a> (<a class="el" href="structbigint.html">bigint</a> b)</td></tr>
+<tr class="separator:abe08de7b1a9aa7f512a4608629a06ba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7b4d284a94726b4fe1b219c984f1ae9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilityfn_8cpp.html#aa7b4d284a94726b4fe1b219c984f1ae9">sample_prime</a> (<a class="el" href="ske-lib_8h.html#a0bb5eea20d345a77027f911883acc087">vb</a> &amp;p)</td></tr>
 <tr class="separator:aa7b4d284a94726b4fe1b219c984f1ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5ff223ef686bd611f1c73bc577aa137"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utilityfn_8cpp.html#aa5ff223ef686bd611f1c73bc577aa137">increment</a> (<a class="el" href="ske-lib_8h.html#a0bb5eea20d345a77027f911883acc087">vb</a> &amp;r)</td></tr>
@@ -124,17 +124,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Increments input bool/bit-vector by 1. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>Input to increment. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a99f323e47596dcefc4db34d5509c6c37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99f323e47596dcefc4db34d5509c6c37">&#9670;&nbsp;</a></span>millerTest()</h2>
+<a id="a8dee1067d0b47e71c84b5ec126aedc2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dee1067d0b47e71c84b5ec126aedc2c">&#9670;&nbsp;</a></span>millerTest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool millerTest </td>
+          <td class="memname">millerTest </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structbigint.html">bigint</a>&#160;</td>
           <td class="paramname"><em>b</em>, </td>
@@ -152,17 +158,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This is second part of the miller-rabin primality check. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>integer to be checked for being prime </td></tr>
+    <tr><td class="paramname">b1</td><td>Odd number such that b = b1*2^r </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>whether miller-test outputs True or False </dd></dl>
 
 </div>
 </div>
-<a id="a7e8938a37766b9f7e2c372b3103f2f8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e8938a37766b9f7e2c372b3103f2f8a">&#9670;&nbsp;</a></span>primality()</h2>
+<a id="abe08de7b1a9aa7f512a4608629a06ba4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe08de7b1a9aa7f512a4608629a06ba4">&#9670;&nbsp;</a></span>primality()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool primality </td>
+          <td class="memname">primality </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structbigint.html">bigint</a>&#160;</td>
           <td class="paramname"><em>b</em></td><td>)</td>
@@ -170,6 +184,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Checks whether b is prime or not.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">b</td><td>Integer that is being tested for prime. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether b is prime or not. </dd></dl>
 
 </div>
 </div>
@@ -206,6 +228,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Stores a random bit string in the input </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>reference to a bit string </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -224,6 +252,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Randomly samples prime of size p.size() </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Bit-vector in which the binary form the prime will be stored. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -270,6 +304,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>XORs message with the key and stores in the enc. XOR is done from index start to index end (inclusive).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Input message to be XORed. </td></tr>
+    <tr><td class="paramname">key</td><td>Bit-vector to be XORed with. </td></tr>
+    <tr><td class="paramname">enc</td><td>Variable to store the result. </td></tr>
+    <tr><td class="paramname">start</td><td>Initial index </td></tr>
+    <tr><td class="paramname">end</td><td>Last index </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
