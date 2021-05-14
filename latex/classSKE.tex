@@ -1,0 +1,83 @@
+\hypertarget{classSKE}{}\doxysection{SKE Class Reference}
+\label{classSKE}\index{SKE@{SKE}}
+
+
+{\ttfamily \#include $<$ske-\/lib.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSKE_a59e169b4c0baa7ca611f6cfbd28d0291}{SKE}} (int \mbox{\hyperlink{classSKE_a89a18aa5856826e250d44757f9700e56}{secpar}}, string name, int mode)
+\item 
+\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \mbox{\hyperlink{classSKE_a7e00e8486a09c7001a83fe5b6cc05736}{decrypt}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} enc) const
+\item 
+\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \mbox{\hyperlink{classSKE_aafbc98cfa2608b05153beb004d059ff9}{encrypt}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} message) const
+\item 
+string \mbox{\hyperlink{classSKE_a7e739babbfcfd7ba209a012b820c0a7a}{get\+\_\+name}} () const
+\item 
+string \mbox{\hyperlink{classSKE_a957210da11adfd8ec7bfa3ce7b816240}{get\+\_\+mode}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classSKE_a89a18aa5856826e250d44757f9700e56}{secpar}}
+\item 
+\mbox{\hyperlink{classBLOCK}{BLOCK}} $\ast$ \mbox{\hyperlink{classSKE_a8d281f81eaea29582aa679a1addb6525}{block\+\_\+instance}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSKE_a59e169b4c0baa7ca611f6cfbd28d0291}\label{classSKE_a59e169b4c0baa7ca611f6cfbd28d0291}} 
+\index{SKE@{SKE}!SKE@{SKE}}
+\index{SKE@{SKE}!SKE@{SKE}}
+\doxysubsubsection{\texorpdfstring{SKE()}{SKE()}}
+{\footnotesize\ttfamily SKE\+::\+SKE (\begin{DoxyParamCaption}\item[{int}]{secpar,  }\item[{string}]{name,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSKE_a7e00e8486a09c7001a83fe5b6cc05736}\label{classSKE_a7e00e8486a09c7001a83fe5b6cc05736}} 
+\index{SKE@{SKE}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!SKE@{SKE}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} SKE\+::decrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}}}]{enc }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSKE_aafbc98cfa2608b05153beb004d059ff9}\label{classSKE_aafbc98cfa2608b05153beb004d059ff9}} 
+\index{SKE@{SKE}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!SKE@{SKE}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} SKE\+::encrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}}}]{message }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSKE_a957210da11adfd8ec7bfa3ce7b816240}\label{classSKE_a957210da11adfd8ec7bfa3ce7b816240}} 
+\index{SKE@{SKE}!get\_mode@{get\_mode}}
+\index{get\_mode@{get\_mode}!SKE@{SKE}}
+\doxysubsubsection{\texorpdfstring{get\_mode()}{get\_mode()}}
+{\footnotesize\ttfamily string SKE\+::get\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSKE_a7e739babbfcfd7ba209a012b820c0a7a}\label{classSKE_a7e739babbfcfd7ba209a012b820c0a7a}} 
+\index{SKE@{SKE}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!SKE@{SKE}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily string SKE\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSKE_a8d281f81eaea29582aa679a1addb6525}\label{classSKE_a8d281f81eaea29582aa679a1addb6525}} 
+\index{SKE@{SKE}!block\_instance@{block\_instance}}
+\index{block\_instance@{block\_instance}!SKE@{SKE}}
+\doxysubsubsection{\texorpdfstring{block\_instance}{block\_instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBLOCK}{BLOCK}}$\ast$ SKE\+::block\+\_\+instance\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSKE_a89a18aa5856826e250d44757f9700e56}\label{classSKE_a89a18aa5856826e250d44757f9700e56}} 
+\index{SKE@{SKE}!secpar@{secpar}}
+\index{secpar@{secpar}!SKE@{SKE}}
+\doxysubsubsection{\texorpdfstring{secpar}{secpar}}
+{\footnotesize\ttfamily int SKE\+::secpar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ske-lib_8h}{ske-\/lib.\+h}}\item 
+\mbox{\hyperlink{ske_8cpp}{ske.\+cpp}}\end{DoxyCompactItemize}

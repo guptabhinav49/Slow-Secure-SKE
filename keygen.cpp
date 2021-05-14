@@ -3,44 +3,46 @@
 #include "ske-lib.h"
 #endif
 
-/* 
-    INIT keygen
+/*! \class KeyGen_RSA
+    Generates p,q,e for RSA.
+    
+*/
+
+/*!
+    \fn KeyGen_RSA::KeyGen_RSA(int secpar)
+    \brief Constructor
+    \param secpar security parameter
 */
 KeyGen_RSA::KeyGen_RSA(int secpar)
 {
     this->secpar = secpar;
 }
 
-/*
-    generate P, Q for RSA function, by random sampling
+/*! \fn KeyGen_RSA::keygen(string name, bigint &N, bigint &e) const
+    \brief Generates key and stores N,e in the given bigint references. We use the Miller-Rabin primality test.
 */
 vb KeyGen_RSA::keygen(string name, bigint &N, bigint &e) const
-{   
+{
     vb key;
     if (name == "RSA")
     {
-        int shift = secpar / 16;
-        vb p(secpar + shift, 0), q(secpar - shift, 0), et(secpar, 0);
+        vb p(secpar, 0), q(secpar, 0), et(8, 0);
         sample_prime(p);
         cout << "p done!" << endl;
-        // print_vb(p);
         sample_prime(q);
         cout << "q done!" << endl;
-        // print_vb(q);
         sample_prime(et);
         cout << "et done!" << endl;
-        // print_vb(et);
-
 
         bigint P, Q;
         P = p, Q = q;
-        N = P*Q;
+        N = P * Q;
         e = et;
 
         key = vb(3 * secpar);
         for (int i = 0; i < 3 * secpar; i++)
         {
-            if (i < secpar - shift)
+            if (i < secpar)
                 key[i] = p[i];
             else if (i < 2 * secpar)
                 key[i] = q[i];

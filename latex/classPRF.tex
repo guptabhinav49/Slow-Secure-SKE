@@ -1,0 +1,112 @@
+\hypertarget{classPRF}{}\doxysection{PRF Class Reference}
+\label{classPRF}\index{PRF@{PRF}}
+
+
+{\ttfamily \#include $<$ske-\/lib.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPRF_ac1095ea5cd67fa52d83f2714f67fa482}{PRF}} (int \mbox{\hyperlink{classPRF_ab4ca2847d94faa3c8ddd359ff386c646}{secpar}}, string name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \mbox{\hyperlink{classPRF_aef7f916fa6e0ca196e0d95cf99ce3e16}{eval}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} index) const
+\begin{DoxyCompactList}\small\item\em evaluates the \mbox{\hyperlink{classPRF}{PRF}} on the given input (same size as input) \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPRF_a22db0cc38c10e4310eaa6d6c4b75bcbc}{get\+\_\+name}} () const
+\item 
+int \mbox{\hyperlink{classPRF_a5c85a11e68ffe814dbf3f0ed1db3f271}{get\+\_\+key\+\_\+size}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classPRF_ab4ca2847d94faa3c8ddd359ff386c646}{secpar}}
+\item 
+\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \mbox{\hyperlink{classPRF_a58ae2c8eba0aaab783930d48fd1b9c8d}{key\+\_\+prg}}
+\item 
+\mbox{\hyperlink{classPRG}{PRG}} $\ast$ \mbox{\hyperlink{classPRF_af05cd0a995f9d09242704044e1ba84b0}{prg\+\_\+instance}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pseudo Random Function Class, based on a Tree structure of PRGs. The Key used is (p$\vert$$\vert$q$\vert$$\vert$e) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPRF_ac1095ea5cd67fa52d83f2714f67fa482}\label{classPRF_ac1095ea5cd67fa52d83f2714f67fa482}} 
+\index{PRF@{PRF}!PRF@{PRF}}
+\index{PRF@{PRF}!PRF@{PRF}}
+\doxysubsubsection{\texorpdfstring{PRF()}{PRF()}}
+{\footnotesize\ttfamily PRF\+::\+PRF (\begin{DoxyParamCaption}\item[{int}]{secpar,  }\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em secpar} & security parameter \\
+\hline
+{\em name} & name of the underlying security parameter. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPRF_aef7f916fa6e0ca196e0d95cf99ce3e16}\label{classPRF_aef7f916fa6e0ca196e0d95cf99ce3e16}} 
+\index{PRF@{PRF}!eval@{eval}}
+\index{eval@{eval}!PRF@{PRF}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} PRF\+::eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}}}]{index }\end{DoxyParamCaption}) const}
+
+
+
+evaluates the \mbox{\hyperlink{classPRF}{PRF}} on the given input (same size as input) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Input Boolean Vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the output of the \mbox{\hyperlink{classPRF}{PRF}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPRF_a5c85a11e68ffe814dbf3f0ed1db3f271}\label{classPRF_a5c85a11e68ffe814dbf3f0ed1db3f271}} 
+\index{PRF@{PRF}!get\_key\_size@{get\_key\_size}}
+\index{get\_key\_size@{get\_key\_size}!PRF@{PRF}}
+\doxysubsubsection{\texorpdfstring{get\_key\_size()}{get\_key\_size()}}
+{\footnotesize\ttfamily int PRF\+::get\+\_\+key\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classPRF_a22db0cc38c10e4310eaa6d6c4b75bcbc}\label{classPRF_a22db0cc38c10e4310eaa6d6c4b75bcbc}} 
+\index{PRF@{PRF}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!PRF@{PRF}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily string PRF\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+returns the name of the \mbox{\hyperlink{classOWP}{OWP}} being used. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPRF_a58ae2c8eba0aaab783930d48fd1b9c8d}\label{classPRF_a58ae2c8eba0aaab783930d48fd1b9c8d}} 
+\index{PRF@{PRF}!key\_prg@{key\_prg}}
+\index{key\_prg@{key\_prg}!PRF@{PRF}}
+\doxysubsubsection{\texorpdfstring{key\_prg}{key\_prg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} PRF\+::key\+\_\+prg\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPRF_af05cd0a995f9d09242704044e1ba84b0}\label{classPRF_af05cd0a995f9d09242704044e1ba84b0}} 
+\index{PRF@{PRF}!prg\_instance@{prg\_instance}}
+\index{prg\_instance@{prg\_instance}!PRF@{PRF}}
+\doxysubsubsection{\texorpdfstring{prg\_instance}{prg\_instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPRG}{PRG}}$\ast$ PRF\+::prg\+\_\+instance\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPRF_ab4ca2847d94faa3c8ddd359ff386c646}\label{classPRF_ab4ca2847d94faa3c8ddd359ff386c646}} 
+\index{PRF@{PRF}!secpar@{secpar}}
+\index{secpar@{secpar}!PRF@{PRF}}
+\doxysubsubsection{\texorpdfstring{secpar}{secpar}}
+{\footnotesize\ttfamily int PRF\+::secpar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ske-lib_8h}{ske-\/lib.\+h}}\item 
+\mbox{\hyperlink{prf_8cpp}{prf.\+cpp}}\end{DoxyCompactItemize}

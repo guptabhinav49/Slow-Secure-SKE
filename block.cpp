@@ -1,3 +1,6 @@
+/*\file
+*/
+
 #ifndef SKE_H
 #define SKE_H
 #include "ske-lib.h"

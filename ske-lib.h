@@ -8,9 +8,6 @@
 #define vb vector<bool>
 using namespace std;
 
-/*Mode 0 -> CTR Mode*/
-
-// OWP based on RSA for now, can be extended later
 class OWP
 {
 private:
@@ -29,8 +26,6 @@ public:
     vb get_key() const;
 };
 
-// PRG class: Object that takes _secpar_ as input.
-// We get a PRG on instanstiation, with key length O(secpar)
 class PRG
 {
     OWP *owp_instance;
@@ -49,6 +44,7 @@ public:
 class PRF
 {
     int secpar;
+    //@param secpar
     vb key_prg;
     PRG *prg_instance;
 
@@ -64,6 +60,7 @@ public:
 class BLOCK
 {
     int secpar;
+    //@param secpar
     int key_size;
     int mode;
     PRF *prf_instance;

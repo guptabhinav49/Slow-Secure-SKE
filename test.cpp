@@ -40,7 +40,7 @@ int main()
     //     }
     // }
 
-    PRF *p = new PRF(32, "RSA");
+    PRG *p = new PRG(1000, "RSA");
     vb enc = p->eval(message);
 
     print_vb(enc);

@@ -3,12 +3,17 @@
 #include "ske-lib.h"
 #endif
 
-/*
-    INIT OWP
+/*! \class OWP
+    One Way Permutation Class, specifically implements the RSA function (along with prime sampling)
 
-    params:
-        secpar: security parameter
-        t: name of the OWP used (currently only 1 available)
+*/
+
+/*! \fn OWP::OWP(int secpar, string t)
+     Constructor
+    \param secpar is the security parameter
+    \param t is the name of the OWP to be used
+    \return an OWP object
+
 */
 OWP::OWP(int secpar, string t)
 {
@@ -16,16 +21,15 @@ OWP::OWP(int secpar, string t)
     name = t;
     KeyGen_RSA *keygen_instance = new KeyGen_RSA(secpar);
     key = keygen_instance->keygen(t, N, e);
-    e = 3;
     nbits = (N.to_bitstring()).size();
     cout << N << " " << e << endl;
 }
 
-/*
-    OWP evaluate- evaalutes output of OWP on the input vector
-
-    params:
-        x: input vector<bool>
+/*!
+    \fn OWP::eval(vb const &x)
+    Evaluates output of OWP on the input vector
+    \param x: the input boolean vector.
+    \return a boolean vector of the same size as the input
 */
 vb OWP::eval(vb const &x) const
 {
@@ -39,7 +43,6 @@ vb OWP::eval(vb const &x) const
         x_dash = x_dash.modexp(N, e);
         out = x_dash.to_bitstring();
     }
-    // cout << out.size()  << " " << nbits << endl;
     if (out.size() != nbits)
     {
         reverse(out.begin(), out.end());
@@ -52,16 +55,23 @@ vb OWP::eval(vb const &x) const
     return out;
 }
 
-/*
-    returns the hardcore predicate (in case of RSA simply any bit of the input)
+/*!
+    \fn OWP::hardcore(vb const &x) const
+    This function calculates the hardcore bit for the input boolean vector.
+    \param x: the input boolean vector
 */
+
 bool OWP::hardcore(vb const &x) const
 {
     return x[x.size() - 1];
 }
 
-/*
-    simple getter functions
+/*! \fn OWP::get_name()
+    \return returns the name of the OWP being used.
 */
 string OWP::get_name() const { return name; }
+
+/*! \fn OWP::get_key()
+    \return returns the key(p||q||e)
+*/
 vb OWP::get_key() const { return key; }

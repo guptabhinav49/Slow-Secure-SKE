@@ -3,8 +3,14 @@
 #include "ske-lib.h"
 #endif
 
-/*
-    INIT PRG
+/*! \class PRG
+    This is a length doubling pesudorandom generator, which uses the RSA OWP.
+*/
+/*! \fn PRG::PRG(int secpar, string name)
+    \brief Constructor
+    \param secpar security parameter
+    \param name name of the underlying OWP
+
 */
 PRG::PRG(int secpar, string name)
 {
@@ -12,8 +18,11 @@ PRG::PRG(int secpar, string name)
     key_owp = owp_instance->get_key();
 }
 
-/*
-    evaluating output of PRG for the given input
+/*! \fn PRG::eval(vb input)
+    Evaluates output of PRG for the given input. It is based on the one-bit stretch PRG (used length of input number of times)
+    \param input the input boolean vector
+    \return output of PRG in the form of a boolean vector (of double length)
+
 */
 vb PRG::eval(vb input) const
 {
@@ -32,9 +41,12 @@ vb PRG::eval(vb input) const
 
     return out;
 }
-
-/*
-    simple getter functions
+/*! \fn PRG::get_name()
+    \return returns the name of the OWP being used.
 */
 string PRG::get_name() const { return owp_instance->get_name(); }
+
+/*! \fn PRG::get_key()
+    \return returns the key(p||q||e)
+*/
 vb PRG::get_key() const { return key_owp; }

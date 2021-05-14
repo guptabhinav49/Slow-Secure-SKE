@@ -1,0 +1,87 @@
+\hypertarget{ske-lib_8h}{}\doxysection{ske-\/lib.h File Reference}
+\label{ske-lib_8h}\index{ske-\/lib.h@{ske-\/lib.h}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Big\+Int.\+cpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classOWP}{OWP}}
+\item 
+class \mbox{\hyperlink{classPRG}{PRG}}
+\item 
+class \mbox{\hyperlink{classPRF}{PRF}}
+\item 
+class \mbox{\hyperlink{classBLOCK}{BLOCK}}
+\item 
+class \mbox{\hyperlink{classSKE}{SKE}}
+\item 
+class \mbox{\hyperlink{classKeyGen__RSA}{Key\+Gen\+\_\+\+RSA}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}}~vector$<$bool$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ske-lib_8h_aa7b4d284a94726b4fe1b219c984f1ae9}{sample\+\_\+prime}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&p)
+\item 
+bool \mbox{\hyperlink{ske-lib_8h_a0c5c83fab186d34a81098e37daeefeb5}{primality}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} p)
+\item 
+void \mbox{\hyperlink{ske-lib_8h_ac57510ba9035a1aca2731813335f1594}{xor\+\_\+vec}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&message, \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&key, \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&enc, int start, int end)
+\item 
+void \mbox{\hyperlink{ske-lib_8h_aa5ff223ef686bd611f1c73bc577aa137}{increment}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&r)
+\item 
+void \mbox{\hyperlink{ske-lib_8h_ad9f2f24143e712b5bec0c5ba6c1afb91}{randomr}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&r)
+\item 
+void \mbox{\hyperlink{ske-lib_8h_a5dccb5b3a6d49532c306e2b08019b3a8}{print\+\_\+vb}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} const \&a)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}\label{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}} 
+\index{ske-\/lib.h@{ske-\/lib.h}!vb@{vb}}
+\index{vb@{vb}!ske-\/lib.h@{ske-\/lib.h}}
+\doxysubsubsection{\texorpdfstring{vb}{vb}}
+{\footnotesize\ttfamily \#define vb~vector$<$bool$>$}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ske-lib_8h_aa5ff223ef686bd611f1c73bc577aa137}\label{ske-lib_8h_aa5ff223ef686bd611f1c73bc577aa137}} 
+\index{ske-\/lib.h@{ske-\/lib.h}!increment@{increment}}
+\index{increment@{increment}!ske-\/lib.h@{ske-\/lib.h}}
+\doxysubsubsection{\texorpdfstring{increment()}{increment()}}
+{\footnotesize\ttfamily void increment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{r }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ske-lib_8h_a0c5c83fab186d34a81098e37daeefeb5}\label{ske-lib_8h_a0c5c83fab186d34a81098e37daeefeb5}} 
+\index{ske-\/lib.h@{ske-\/lib.h}!primality@{primality}}
+\index{primality@{primality}!ske-\/lib.h@{ske-\/lib.h}}
+\doxysubsubsection{\texorpdfstring{primality()}{primality()}}
+{\footnotesize\ttfamily bool primality (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}}}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ske-lib_8h_a5dccb5b3a6d49532c306e2b08019b3a8}\label{ske-lib_8h_a5dccb5b3a6d49532c306e2b08019b3a8}} 
+\index{ske-\/lib.h@{ske-\/lib.h}!print\_vb@{print\_vb}}
+\index{print\_vb@{print\_vb}!ske-\/lib.h@{ske-\/lib.h}}
+\doxysubsubsection{\texorpdfstring{print\_vb()}{print\_vb()}}
+{\footnotesize\ttfamily void print\+\_\+vb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} const \&}]{a }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ske-lib_8h_ad9f2f24143e712b5bec0c5ba6c1afb91}\label{ske-lib_8h_ad9f2f24143e712b5bec0c5ba6c1afb91}} 
+\index{ske-\/lib.h@{ske-\/lib.h}!randomr@{randomr}}
+\index{randomr@{randomr}!ske-\/lib.h@{ske-\/lib.h}}
+\doxysubsubsection{\texorpdfstring{randomr()}{randomr()}}
+{\footnotesize\ttfamily void randomr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{r }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ske-lib_8h_aa7b4d284a94726b4fe1b219c984f1ae9}\label{ske-lib_8h_aa7b4d284a94726b4fe1b219c984f1ae9}} 
+\index{ske-\/lib.h@{ske-\/lib.h}!sample\_prime@{sample\_prime}}
+\index{sample\_prime@{sample\_prime}!ske-\/lib.h@{ske-\/lib.h}}
+\doxysubsubsection{\texorpdfstring{sample\_prime()}{sample\_prime()}}
+{\footnotesize\ttfamily void sample\+\_\+prime (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ske-lib_8h_ac57510ba9035a1aca2731813335f1594}\label{ske-lib_8h_ac57510ba9035a1aca2731813335f1594}} 
+\index{ske-\/lib.h@{ske-\/lib.h}!xor\_vec@{xor\_vec}}
+\index{xor\_vec@{xor\_vec}!ske-\/lib.h@{ske-\/lib.h}}
+\doxysubsubsection{\texorpdfstring{xor\_vec()}{xor\_vec()}}
+{\footnotesize\ttfamily void xor\+\_\+vec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{message,  }\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{key,  }\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \&}]{enc,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+

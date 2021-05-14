@@ -1,0 +1,147 @@
+\hypertarget{classOWP}{}\doxysection{OWP Class Reference}
+\label{classOWP}\index{OWP@{OWP}}
+
+
+{\ttfamily \#include $<$ske-\/lib.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOWP_a4f59b99c43b4ba8f2f65c6210abc606d}{OWP}} (int \mbox{\hyperlink{classOWP_a7d4c918c5498bff338954d03a42f9b6a}{secpar}}, string)
+\item 
+\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \mbox{\hyperlink{classOWP_ad5aa45363bcea99c9990683bc43296dc}{eval}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} const \&x) const
+\item 
+bool \mbox{\hyperlink{classOWP_a8732083805569d3fe5ac646e08617d2d}{hardcore}} (\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} const \&x) const
+\item 
+string \mbox{\hyperlink{classOWP_a08fe1e80cf31b3fcd1ab80a1628f8678}{get\+\_\+name}} () const
+\item 
+\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \mbox{\hyperlink{classOWP_abcde11d5b0bd81758796018f63f3f55b}{get\+\_\+key}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classOWP_a3c40bdbcd69fed406b1cd168faf8efce}{name}}
+\item 
+\mbox{\hyperlink{structbigint}{bigint}} \mbox{\hyperlink{classOWP_a4738a7c1fd87996b682cec56471e6de1}{N}}
+\item 
+\mbox{\hyperlink{structbigint}{bigint}} \mbox{\hyperlink{classOWP_a68fa6e3a97f5be7365dc113dc07691f1}{e}}
+\item 
+\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} \mbox{\hyperlink{classOWP_aa562d6db250a668dd0727b7d24124c17}{key}}
+\item 
+int \mbox{\hyperlink{classOWP_a7d4c918c5498bff338954d03a42f9b6a}{secpar}}
+\item 
+int \mbox{\hyperlink{classOWP_ade1c8503acddb33f87b229430f3d0748}{nbits}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+One Way Permutation Class, specifically implements the RSA function (along with prime sampling) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOWP_a4f59b99c43b4ba8f2f65c6210abc606d}\label{classOWP_a4f59b99c43b4ba8f2f65c6210abc606d}} 
+\index{OWP@{OWP}!OWP@{OWP}}
+\index{OWP@{OWP}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{OWP()}{OWP()}}
+{\footnotesize\ttfamily OWP\+::\+OWP (\begin{DoxyParamCaption}\item[{int}]{secpar,  }\item[{string}]{t }\end{DoxyParamCaption})}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em secpar} & is the security parameter \\
+\hline
+{\em t} & is the name of the \mbox{\hyperlink{classOWP}{OWP}} to be used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \mbox{\hyperlink{classOWP}{OWP}} object 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOWP_ad5aa45363bcea99c9990683bc43296dc}\label{classOWP_ad5aa45363bcea99c9990683bc43296dc}} 
+\index{OWP@{OWP}!eval@{eval}}
+\index{eval@{eval}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} OWP\+::eval (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} const \&}]{x }\end{DoxyParamCaption}) const}
+
+Evaluates output of \mbox{\hyperlink{classOWP}{OWP}} on the input vector 
+\begin{DoxyParams}{Parameters}
+{\em x} & the input boolean vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean vector of the same size as the input 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOWP_abcde11d5b0bd81758796018f63f3f55b}\label{classOWP_abcde11d5b0bd81758796018f63f3f55b}} 
+\index{OWP@{OWP}!get\_key@{get\_key}}
+\index{get\_key@{get\_key}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{get\_key()}{get\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} OWP\+::get\+\_\+key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+returns the key(p$\vert$$\vert$q$\vert$$\vert$e) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOWP_a08fe1e80cf31b3fcd1ab80a1628f8678}\label{classOWP_a08fe1e80cf31b3fcd1ab80a1628f8678}} 
+\index{OWP@{OWP}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily string OWP\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+returns the name of the \mbox{\hyperlink{classOWP}{OWP}} being used. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOWP_a8732083805569d3fe5ac646e08617d2d}\label{classOWP_a8732083805569d3fe5ac646e08617d2d}} 
+\index{OWP@{OWP}!hardcore@{hardcore}}
+\index{hardcore@{hardcore}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{hardcore()}{hardcore()}}
+{\footnotesize\ttfamily bool OWP\+::hardcore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} const \&}]{x }\end{DoxyParamCaption}) const}
+
+This function calculates the hardcore bit for the input boolean vector. 
+\begin{DoxyParams}{Parameters}
+{\em x} & the input boolean vector \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classOWP_a68fa6e3a97f5be7365dc113dc07691f1}\label{classOWP_a68fa6e3a97f5be7365dc113dc07691f1}} 
+\index{OWP@{OWP}!e@{e}}
+\index{e@{e}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbigint}{bigint}} OWP\+::e\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classOWP_aa562d6db250a668dd0727b7d24124c17}\label{classOWP_aa562d6db250a668dd0727b7d24124c17}} 
+\index{OWP@{OWP}!key@{key}}
+\index{key@{key}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ske-lib_8h_a0bb5eea20d345a77027f911883acc087}{vb}} OWP\+::key\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classOWP_a4738a7c1fd87996b682cec56471e6de1}\label{classOWP_a4738a7c1fd87996b682cec56471e6de1}} 
+\index{OWP@{OWP}!N@{N}}
+\index{N@{N}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbigint}{bigint}} OWP\+::N\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classOWP_a3c40bdbcd69fed406b1cd168faf8efce}\label{classOWP_a3c40bdbcd69fed406b1cd168faf8efce}} 
+\index{OWP@{OWP}!name@{name}}
+\index{name@{name}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string OWP\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classOWP_ade1c8503acddb33f87b229430f3d0748}\label{classOWP_ade1c8503acddb33f87b229430f3d0748}} 
+\index{OWP@{OWP}!nbits@{nbits}}
+\index{nbits@{nbits}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{nbits}{nbits}}
+{\footnotesize\ttfamily int OWP\+::nbits\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classOWP_a7d4c918c5498bff338954d03a42f9b6a}\label{classOWP_a7d4c918c5498bff338954d03a42f9b6a}} 
+\index{OWP@{OWP}!secpar@{secpar}}
+\index{secpar@{secpar}!OWP@{OWP}}
+\doxysubsubsection{\texorpdfstring{secpar}{secpar}}
+{\footnotesize\ttfamily int OWP\+::secpar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ske-lib_8h}{ske-\/lib.\+h}}\item 
+\mbox{\hyperlink{owp_8cpp}{owp.\+cpp}}\end{DoxyCompactItemize}
