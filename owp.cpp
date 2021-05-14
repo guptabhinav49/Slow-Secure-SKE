@@ -17,9 +17,8 @@ vector<bool> OWP::eval(vector<bool> const &x) const{
     if(name == "RSA"){
         bigint x_dash;
         x_dash = x;
-        // cout << "YO";
         x_dash = x_dash.modexp(N, e);
-        // cout << "MODEXP iter done" << endl;
+        
         out = x_dash.to_bitstring();
     }
     if(out.size() != x.size()){

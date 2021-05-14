@@ -10,6 +10,7 @@ using namespace std;
 
 /*Mode 0 -> CTR Mode*/
 
+// OWP based on RSA for now, can be extended later
 class OWP
 {
 private:
@@ -27,6 +28,8 @@ public:
     vb get_key() const;
 };
 
+// PRG class: Object that takes _secpar_ as input. 
+// We get a PRG on instanstiation, with key length O(secpar)
 class PRG
 {
     OWP *owp_instance;
@@ -39,6 +42,9 @@ public:
     vb get_key() const;
 };
 
+// Returns a PRF. Initialisation with secpar.
+// Functions:
+//     eval- outputs PRFs output on input index 
 class PRF
 {   
     int secpar;
@@ -52,6 +58,8 @@ public:
     int get_key_size() const; 
 };
 
+// Utility class to encrypt the messages with multiple blocks
+// Instantiated by class SKE
 class BLOCK
 {   
     int secpar;
@@ -68,6 +76,12 @@ public:
     // vb get_key();
 };
 
+// CPA-secure SKE scheme
+// Instantiated with _secpar_
+// Functions: 
+//      encrypt: encrypts the message
+//      decrypt: decrypts
+
 class SKE
 {
     // vb key;
@@ -83,6 +97,9 @@ public:
     // vb serialize();
 };
 
+
+// Class to generate keys for RSA OWP
+// called internally by OWP class on initialisation with secpar
 class KeyGen_RSA
 {
     int secpar;
@@ -92,7 +109,7 @@ public:
     vb keygen(string name, bigint &N, bigint &e) const;
 };
 
-//FUNCTIONS
+// UTILITY FUNCTIONS
 
 void sample_prime(vb &p);
 bool primality(vb p);

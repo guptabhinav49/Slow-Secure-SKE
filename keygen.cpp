@@ -17,13 +17,13 @@ vb KeyGen_RSA::keygen(string name, bigint &N, bigint &e) const
         vb p(secpar + shift, 0), q(secpar - shift, 0), et(secpar, 0);
         sample_prime(p);
         cout << "p done!" << endl;
-        print_vb(p);
+        // print_vb(p);
         sample_prime(q);
         cout << "q done!" << endl;
-        print_vb(q);
+        // print_vb(q);
         sample_prime(et);
         cout << "et done!" << endl;
-        print_vb(et);
+        // print_vb(et);
 
 
         bigint P, Q;

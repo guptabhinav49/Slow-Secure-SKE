@@ -4,19 +4,8 @@
 #endif
 
 PRG::PRG(int secpar, string name){
-    // int shift = key.size()/48;
-    owp_instance = new OWP(secpar, name);   //to be changed, just dummy info
+    owp_instance = new OWP(secpar, name);
     key_owp = owp_instance->get_key();
-    
-    // vb vb1, vb2, vb3;
-    // vb1 = vb(key.begin(), key.begin() + key.size()/3 + shift);
-    // vb2 = vb(key.begin() + key.size()/3 + shift, key.begin() + 2*key.size()/3);
-    // vb3 = vb(key.begin() + 2*key.size()/3, key.end());
-
-    // bigint a, b;
-    // a = vb1;
-    // b = vb2;
-    // a *= b;
 }
 
 vb PRG::eval(vb input) const {
