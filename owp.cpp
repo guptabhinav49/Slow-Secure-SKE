@@ -16,7 +16,7 @@ OWP::OWP(int secpar, string t){
     KeyGen_RSA *keygen_instance = new KeyGen_RSA(secpar);
     key = keygen_instance->keygen(t, N, e);
     nbits = (N.to_bitstring()).size();
-    cout << N <<  " " << e << endl;
+    cout << N << " " << e << endl;
 }
 
 /*

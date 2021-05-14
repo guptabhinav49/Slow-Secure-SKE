@@ -13,17 +13,19 @@ int main()
     // PRG *b = new PRG("asd", v1);
     // PRF *c = new PRF("asda", v2);
 
-    // SKE *s = new SKE(32, "RSA", 0);
+    // SKE *s = new SKE(64, "RSA", 0);
     // cout << "hello!" << endl;
     int message_size = 1e3;
     vb message(message_size);
     for(int i=0; i<message_size; i++){
         message[i] = rand()%2;
     }
-    print_vb(message);
+    // print_vb(message);
 
     // vb enc = s->encrypt(message);
     // print_vb(enc);
+
+    // cout << "ENC DONE" << endl;
 
     // vb dec = s->decrypt(enc);
     // print_vb(dec);
@@ -35,7 +37,7 @@ int main()
     //     }
     // }
 
-    PRG* p = new PRG(32, "RSA");
+    PRG* p = new PRG(100, "RSA");
     vb enc = p->eval(message);
 
     print_vb(enc);
