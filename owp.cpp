@@ -15,6 +15,7 @@ OWP::OWP(int secpar, string t){
     name = t;
     KeyGen_RSA *keygen_instance = new KeyGen_RSA(secpar);
     key = keygen_instance->keygen(t, N, e);
+    nbits = (N.to_bitstring()).size();
     cout << N <<  " " << e << endl;
 }
 
@@ -30,13 +31,14 @@ vector<bool> OWP::eval(vector<bool> const &x) const{
     if(name == "RSA"){
         bigint x_dash;
         x_dash = x;
+        x_dash = x_dash%N;
         x_dash = x_dash.modexp(N, e);
-        
         out = x_dash.to_bitstring();
     }
-    if(out.size() != x.size()){
+    // cout << out.size()  << " " << nbits << endl;
+    if(out.size() != nbits){
         reverse(out.begin(), out.end());
-        while(out.size() != x.size())
+        while(out.size() != nbits)
             out.push_back(0);
         
         reverse(out.begin(), out.end());

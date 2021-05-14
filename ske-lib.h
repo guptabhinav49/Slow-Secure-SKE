@@ -19,6 +19,7 @@ private:
     bigint e;
     vb key;
     int secpar;
+    int nbits;
 
 public:
     OWP(int secpar, string);
