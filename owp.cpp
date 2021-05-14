@@ -4,22 +4,21 @@
 #include "ske-lib.h"
 #endif
 
-OWP::OWP(string t, vb i1, vb i2={0}){
+OWP::OWP(int secpar, string t){
+    this->secpar = 
     name = t;
-    index1 = i1;
-    index2 = i2;
+    KeyGen_RSA *keygen_instance = new KEYGEN(secpar);
+    key = keygen_instance->keygen(t, N, e);
 }
 
 vector<bool> OWP::eval(vector<bool> const &x) const{
     vb out;
 
     if(name == "RSA"){
-        bigint N, e, x_dash;
-        N = index1, e = index2;
+        bigint x_dash;
         x_dash = x;
 
         x_dash = x_dash^e % N;
-
         out = x_dash.to_bitstring();
     }
 
@@ -27,7 +26,14 @@ vector<bool> OWP::eval(vector<bool> const &x) const{
 }
 
 bool OWP::hardcore(vector<bool> const &x) const{
-    return 1;
+    vb x_dash;
+    x_dash = x;
+
+    x_dash = x_dash^e % N;
+    bv out = x_dash.to_bitstring();
+
+    return out[out.size()-1]; 
 }
 
 string OWP::get_name(){ return name;}
+vb OWP::get_key(){return key;}

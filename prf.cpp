@@ -3,9 +3,10 @@
 #include "ske-lib.h"
 #endif
 
-PRF::PRF(string name, vb key){
-    prg_instance = new PRG(name, key);
-    key_prg = key;
+PRF::PRF(int secpar, string name){
+    this->secpar = secpar;
+    prg_instance = new PRG(secpar, name);
+    key_prg = PRG->get_key();
 }
 
 vb PRF::eval(vb index){
@@ -23,3 +24,4 @@ vb PRF::eval(vb index){
 }
 
 string PRF::get_name(){return prg_instance->get_name();}
+vb PRF::get_key_size(){return prg_instance->get_key().size();}

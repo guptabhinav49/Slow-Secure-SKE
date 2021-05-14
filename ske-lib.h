@@ -14,50 +14,58 @@ class OWP
 {
 private:
     string name;
-    bigint index1;
-    bigint index2;
+    bigint N;
+    bigint e;
+    vb key;
+    int secpar;
 
 public:
-    OWP(string, vb i1, vb i2={0});
+    OWP(int secpar, string);
     vb eval(vb const &x) const;
     bool hardcore(vb const &x) const;
     string get_name();
+    vb get_key();
 };
 
 class PRG
 {
     OWP *owp_instance;
-    vb index_owp;
+    vb key_owp;
 
 public:
-    PRG(string name, vb key);
+    PRG(int secpar, string name);
     vb eval(vb input);
     string get_name();
+    vb get_key();
 };
 
 class PRF
-{
+{   
+    int secpar;
     vb key_prg;
     PRG *prg_instance;
 
 public:
-    PRF(string name, vb key);
+    PRF(int secpar, string name);
     vb eval(vb index);
     string get_name();
+    vb get_key();
 };
 
 class BLOCK
-{
-    vb key_block;
+{   
+    int secpar;
+    vb key_size;
     int mode;
     PRF *prf_instance;
 
 public:
-    BLOCK(vb key, int mode, string name);
+    BLOCK(int secpar, string name, int mode);
     vb encrypt(vb message);
     vb decrypt(vb enc);
     string get_name();
     string get_mode();
+    vb get_key();
 };
 
 class SKE
@@ -75,13 +83,13 @@ public:
     // vb serialize();
 };
 
-class KEYGEN
+class KeyGen_RSA
 {
     int secpar;
 
 public:
-    KEYGEN(int secpar);
-    vb keygen(string name);
+    KeyGen_RSA(int secpar);
+    vb keygen(string name, bigint &N, bigint &e);
 };
 
 //FUNCTIONS

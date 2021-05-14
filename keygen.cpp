@@ -7,16 +7,21 @@ KEYGEN::KEYGEN(int secpar)
     this->secpar = secpar;
 }
 
-vb KEYGEN::keygen(string name)
+vb KEYGEN::keygen(string name, bigint &N, bigint &e)
 {   
     vb key;
     if (name == "RSA")
     {
         int shift = secpar / 16;
-        vb p(secpar + shift, 0), q(secpar - shift, 0), e(secpar, 0);
+        vb p(secpar + shift, 0), q(secpar - shift, 0), et(secpar, 0);
         sample_prime(p);
         sample_prime(q);
-        sample_prime(e);
+        sample_prime(et);
+
+        bigint P, Q, E;
+        P = p, Q = q;
+        N = P*Q;
+        e = et;
 
         key = vb(3 * secpar);
         for (int i = 0; i < 3 * secpar; i++)

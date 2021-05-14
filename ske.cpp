@@ -12,11 +12,8 @@ SKE::SKE(int secpar, string name = "RSA", int mode = 0)
         throw std::runtime_error("Error: secpar not long enough");
     }
 
-    vb key;
-    KEYGEN *keygen_instance = new KEYGEN(secpar);
-    //key = Keygen(secpar)
-    this->block_instance = new BLOCK(key, mode, name);
-    this->key = key;
+    this->block_instance = new BLOCK(secpar, name, mode);
+    this->key = block_instance->get_key();
     this->secpar = secpar;
 }
 
