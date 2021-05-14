@@ -17,19 +17,22 @@ int main()
     cout << "hello!" << endl;
     int message_size = 1e2;
     vb message(message_size);
-    for(int i=0; i<message_size; i++){
-        message[i] = rand()%2;
+    for (int i = 0; i < message_size; i++)
+    {
+        message[i] = rand() % 2;
     }
     print_vb(message);
-    
+
     vb enc = s->encrypt(message);
     print_vb(enc);
 
     vb dec = s->decrypt(enc);
     print_vb(dec);
 
-    for(int i=0; i<message_size; i++){
-        if(dec[i] != message[i]){
+    for (int i = 0; i < message_size; i++)
+    {
+        if (dec[i] != message[i])
+        {
             cout << "wrong" << endl;
             break;
         }
@@ -49,7 +52,6 @@ int main()
     // vb alpha1 = {0,1,1,0};
     // alpha1.insert(alpha1.end(), alpha.begin(), alpha.end());
     // print_vb(alpha1);
-
 
     // bigint b1 = 52131212;
     // bigint b2 = 90131231231212123;
