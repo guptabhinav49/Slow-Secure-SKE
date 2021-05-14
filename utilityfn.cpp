@@ -3,6 +3,19 @@
 #include "ske-lib.h"
 #endif
 
+/*
+    This file contains various getter functions,
+    helping at various places throughout the code
+
+    functions:
+        print_vb(a): prints the input bit vector a
+        randomr(r): stores random but vector in r
+        primality(p): primality check for bit vector p
+        sample_prime(p): samples a random prime in p
+        increment(p)
+        xor_vec(params) : used for xoring the input message with the random pad generated 
+*/
+
 void print_vb(vb const &a)
 {
     for (int i = 0; i < a.size(); i++)

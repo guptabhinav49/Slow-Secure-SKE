@@ -3,11 +3,17 @@
 #include "ske-lib.h"
 #endif
 
+/* 
+    INIT keygen
+*/
 KeyGen_RSA::KeyGen_RSA(int secpar)
 {
     this->secpar = secpar;
 }
 
+/*
+    generate P, Q for RSA function, by random sampling
+*/
 vb KeyGen_RSA::keygen(string name, bigint &N, bigint &e) const
 {   
     vb key;

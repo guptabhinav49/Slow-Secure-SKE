@@ -20,6 +20,8 @@ int main()
     for(int i=0; i<message_size; i++){
         message[i] = rand()%2;
     }
+    print_vb(message);
+    
     vb enc = s->encrypt(message);
     print_vb(enc);
 

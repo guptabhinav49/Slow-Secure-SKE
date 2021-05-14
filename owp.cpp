@@ -3,6 +3,13 @@
 #include "ske-lib.h"
 #endif
 
+/*
+    INIT OWP
+
+    params:
+        secpar: security parameter
+        t: name of the OWP used (currently only 1 available)
+*/
 OWP::OWP(int secpar, string t){
     this->secpar = secpar;
     name = t;
@@ -11,6 +18,12 @@ OWP::OWP(int secpar, string t){
     cout << N <<  " " << e << endl;
 }
 
+/*
+    OWP evaluate- evaalutes output of OWP on the input vector
+
+    params:
+        x: input vector<bool>
+*/
 vector<bool> OWP::eval(vector<bool> const &x) const{
     vb out;
 
@@ -32,9 +45,15 @@ vector<bool> OWP::eval(vector<bool> const &x) const{
     return out;
 }
 
+/*
+    returns the hardcore predicate (in case of RSA simply any bit of the input)
+*/
 bool OWP::hardcore(vector<bool> const &x) const{
     return x[x.size()-1]; 
 }
 
+/*
+    simple getter functions
+*/
 string OWP::get_name() const { return name;}
 vb OWP::get_key() const {return key;}

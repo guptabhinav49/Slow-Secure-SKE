@@ -3,6 +3,10 @@
 #include "ske-lib.h"
 #endif
 
+
+/*
+    INIT BLOCK
+*/
 BLOCK::BLOCK(int secpar, string name, int mode)
 {   
     this->secpar = secpar;
@@ -11,8 +15,9 @@ BLOCK::BLOCK(int secpar, string name, int mode)
     this->key_size = prf_instance->get_key_size(); //size = 3* secpar
 }
 
-// vb BLOCK::get_key(){return key_block;}
-
+/*
+    Encrypt message block-wise
+*/
 vb BLOCK::encrypt(vb message) const
 {   
     vb enc;
@@ -56,6 +61,9 @@ vb BLOCK::encrypt(vb message) const
     return enc;
 }
 
+/*
+    Decrypt message blockwise
+*/
 vb BLOCK::decrypt(vb enc) const
 {   
     vb message;
@@ -92,6 +100,9 @@ vb BLOCK::decrypt(vb enc) const
     return message;
 }
 
+/*
+    basic getters for ease of use 
+*/
 string BLOCK::get_mode() const
 {
     if (this->mode == 0)
