@@ -1,11 +1,7 @@
-// #include <bits/stdc++.h>
-
 #ifndef SKE_H
 #define SKE_H
 #include "ske-lib.h"
 #endif
-
-// using namespace std;
 
 BLOCK::BLOCK(int secpar, string name, int mode)
 {   
@@ -17,7 +13,7 @@ BLOCK::BLOCK(int secpar, string name, int mode)
 
 // vb BLOCK::get_key(){return key_block;}
 
-vb BLOCK::encrypt(vb message)
+vb BLOCK::encrypt(vb message) const
 {   
     vb enc;
     if (mode == 0)
@@ -60,7 +56,7 @@ vb BLOCK::encrypt(vb message)
     return enc;
 }
 
-vb BLOCK::decrypt(vb enc)
+vb BLOCK::decrypt(vb enc) const
 {   
     vb message;
     if (mode == 0)
@@ -96,7 +92,7 @@ vb BLOCK::decrypt(vb enc)
     return message;
 }
 
-string BLOCK::get_mode()
+string BLOCK::get_mode() const
 {
     if (this->mode == 0)
         return "CTR";
@@ -104,7 +100,7 @@ string BLOCK::get_mode()
     return NULL;
 }
 
-string BLOCK::get_name()
+string BLOCK::get_name() const
 {
     return this->prf_instance->get_name();
 }

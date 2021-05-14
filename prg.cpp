@@ -1,4 +1,3 @@
-// #include <bits/stdc++.h>
 #ifndef SKE_H
 #define SKE_H
 #include "ske-lib.h"
@@ -20,7 +19,7 @@ PRG::PRG(int secpar, string name){
     // a *= b;
 }
 
-vb PRG::eval(vb input){
+vb PRG::eval(vb input) const {
     vb intermediate = input;
     vb out;
     for(int i=0; i<input.size(); i++){
@@ -36,5 +35,5 @@ vb PRG::eval(vb input){
     return out;
 }
 
-string PRG::get_name(){return owp_instance->get_name();}
-vb PRG::get_key(){return key_owp;}
+string PRG::get_name() const {return owp_instance->get_name();}
+vb PRG::get_key() const {return key_owp;}

@@ -9,7 +9,7 @@ PRF::PRF(int secpar, string name){
     key_prg = prg_instance->get_key();
 }
 
-vb PRF::eval(vb index){
+vb PRF::eval(vb index) const{
     vb out = key_prg;
     for(int i=0; i<index.size(); i++){
         out = prg_instance->eval(out);
@@ -24,5 +24,5 @@ vb PRF::eval(vb index){
     return out;
 }
 
-string PRF::get_name(){return prg_instance->get_name();}
-int PRF::get_key_size(){return key_prg.size();}
+string PRF::get_name() const {return prg_instance->get_name();}
+int PRF::get_key_size() const {return key_prg.size();}

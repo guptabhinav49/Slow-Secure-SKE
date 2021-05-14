@@ -1,16 +1,7 @@
-// #include<bits/stdc++.h>
-// #include "BigInt.cpp"
 #ifndef SKE_H
 #define SKE_H
 #include "ske-lib.h"
 #endif
-
-// void print_vb(vb a)
-// {
-//     for (int i = 0; i < a.size(); i++)
-//         cout << a[i];
-//     cout << endl;
-// }
 
 int main()
 {
@@ -21,6 +12,7 @@ int main()
 
     // PRG *b = new PRG("asd", v1);
     // PRF *c = new PRF("asda", v2);
+    
     SKE *s = new SKE(32, "RSA", 0);
     cout << "hello!" << endl;
     vb message(1e3);

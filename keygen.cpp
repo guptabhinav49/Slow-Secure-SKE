@@ -1,13 +1,14 @@
-// #include <bits/stdc++.h>
+#ifndef SKE_H
+#define SKE_H
 #include "ske-lib.h"
-// using namespace std;
+#endif
 
 KeyGen_RSA::KeyGen_RSA(int secpar)
 {
     this->secpar = secpar;
 }
 
-vb KeyGen_RSA::keygen(string name, bigint &N, bigint &e)
+vb KeyGen_RSA::keygen(string name, bigint &N, bigint &e) const
 {   
     vb key;
     if (name == "RSA")

@@ -1,9 +1,5 @@
 //This has been taken from https://gist.github.com/ar-pa/957297fb3f88996ead11
 
-// #ifndef SKE_H
-// #define SKE_H
-// #include "ske-lib.h"
-// #endif
 #include <bits/stdc++.h>
 using namespace std;
 

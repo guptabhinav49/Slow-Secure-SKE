@@ -1,4 +1,3 @@
-// #include <bits/stdc++.h>
 #ifndef SKE_H
 #define SKE_H
 #include "ske-lib.h"
@@ -38,5 +37,5 @@ bool OWP::hardcore(vector<bool> const &x) const{
     return x[x.size()-1]; 
 }
 
-string OWP::get_name(){ return name;}
-vb OWP::get_key(){return key;}
+string OWP::get_name() const { return name;}
+vb OWP::get_key() const {return key;}

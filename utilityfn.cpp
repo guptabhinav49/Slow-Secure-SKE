@@ -1,7 +1,9 @@
+#ifndef SKE_H
+#define SKE_H
 #include "ske-lib.h"
-// #include "BigInt.cpp"
+#endif
 
-void print_vb(vb &a)
+void print_vb(vb const &a)
 {
     for (int i = 0; i < a.size(); i++)
         cout << a[i];
