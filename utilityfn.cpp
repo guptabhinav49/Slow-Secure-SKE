@@ -3,19 +3,10 @@
 #include "ske-lib.h"
 #endif
 
-/*
-    This file contains various getter functions,
-    helping at various places throughout the code
-
-    functions:
-        print_vb(a): prints the input bit vector a
-        randomr(r): stores random but vector in r
-        primality(p): primality check for bit vector p
-        sample_prime(p): samples a random prime in p
-        increment(p)
-        xor_vec(params) : used for xoring the input message with the random pad generated 
+/*!
+    \fn print_vb()
+    Prints the bool vector to stdout  
 */
-
 void print_vb(vb const &a)
 {
     for (int i = 0; i < a.size(); i++)
@@ -23,6 +14,11 @@ void print_vb(vb const &a)
     cout << endl;
 }
 
+/*!
+    \fn randomr(vb &r)
+    Stores a random bit string in the input
+    \param r reference to a bit string
+*/
 void randomr(vb &r)
 {
     // srand(time(NULL));
@@ -32,6 +28,13 @@ void randomr(vb &r)
     }
 }
 
+/*!
+    \fn millerTest(bigint b, bigint b1)
+    This is second part of the miller-rabin primality check.
+    \param b integer to be checked for being prime 
+    \param b1 Odd number such that b = b1*2^r
+    \return whether miller-test outputs True or False
+*/
 
 bool millerTest(bigint b, bigint b1){
     const int MAX_LEN = 200;
@@ -58,6 +61,14 @@ bool millerTest(bigint b, bigint b1){
     return false;
 }
 
+/*!
+    \fn primality(bigint b)
+    Checks whether b is prime or not.
+
+    \param b Integer that is being tested for prime.
+    \return Whether b is prime or not.
+*/
+
 bool primality(bigint b)
 {   
     if(b==0 || b==1){
@@ -82,6 +93,12 @@ bool primality(bigint b)
     return true;
 }
 
+/*!
+    \fn sample_prime(vb &p)
+    Randomly samples prime of size p.size()
+    \param p Bit-vector in which the binary form the prime will be stored.
+*/
+
 void sample_prime(vb &p)
 {
     // srand(time(NULL));
@@ -99,7 +116,11 @@ void sample_prime(vb &p)
         b = p;
     }
 }
-
+/*!
+    \fn increment(vb &r)
+    Increments input bool/bit-vector by 1.
+    \param r Input to increment.
+*/
 void increment(vb &r)
 {
     int first = 0;
@@ -117,6 +138,17 @@ void increment(vb &r)
         }
     }
 }
+
+/*!
+    \fn xor_vec(vb &message, vb &key, vb &enc, int start, int end)
+    XORs \param message with the \param key and stores in the \param enc. XOR is done from index \param start to index \param end (inclusive).
+
+    \param message Input message to be XORed.
+    \param key Bit-vector to be XORed with.
+    \param enc Variable to store the result.
+    \param start Initial index
+    \param end Last index 
+*/
 
 void xor_vec(vb &message, vb &key, vb &enc, int start, int end)
 {

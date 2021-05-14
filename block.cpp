@@ -3,9 +3,17 @@
 #include "ske-lib.h"
 #endif
 
+/*!
+    \class BLOCK
+    This class blockwise encrpyts the input message, after calling the class PRF multiple times (i.e. for each block of message).
+*/
 
-/*
-    INIT BLOCK
+/*!
+    \fn BLOCK::BLOCK(int secpar, string name, int mode)
+    This is the constructor for this class.
+    \param secpar Security parameter
+    \param name Name of the OWP primitive to be used for the defining the PRF used (only one option as of now)
+    \param mode Mode (CBC only as of now)
 */
 BLOCK::BLOCK(int secpar, string name, int mode)
 {   
@@ -15,8 +23,11 @@ BLOCK::BLOCK(int secpar, string name, int mode)
     this->key_size = prf_instance->get_key_size(); //size = 3* secpar
 }
 
-/*
+/*!
+    \fn BLOCK::encrypt(vb message)
     Encrypt message block-wise
+    \param message Message to be encrypted by this object.
+    \return The encrypted bool-vector
 */
 vb BLOCK::encrypt(vb message) const
 {   
@@ -61,8 +72,11 @@ vb BLOCK::encrypt(vb message) const
     return enc;
 }
 
-/*
-    Decrypt message blockwise
+/*!  
+    \fn BLOCK::decrypt(vb enc)
+    Decrypts the ciphertext blockwise
+    \param enc Ciphertext to be decrypted
+    \return Decrypted bool vector from the input ciphertext
 */
 vb BLOCK::decrypt(vb enc) const
 {   
@@ -100,8 +114,10 @@ vb BLOCK::decrypt(vb enc) const
     return message;
 }
 
-/*
-    basic getters for ease of use 
+/*!
+    \fn BLOCK::get_mode()
+    Getter to get the current mode of encryption.
+    \return returns the mode
 */
 string BLOCK::get_mode() const
 {
@@ -111,6 +127,11 @@ string BLOCK::get_mode() const
     return NULL;
 }
 
+/*!
+    \fn BLOCK::get_name()
+    Getter to get the primitive in use.
+    \return returns the primitive name as a string.
+*/
 string BLOCK::get_name() const
 {
     return this->prf_instance->get_name();
